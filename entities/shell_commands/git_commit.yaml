@@ -1,1 +1,1 @@
-git_commit: ./home/homeassistant/.homeassistant/gitupdate.sh "{{ states("input_text.commit_message") }}"
+git_commit: /config/shell_scripts/git_push_changes.sh "{{ states("input_text.commit_message") }}"

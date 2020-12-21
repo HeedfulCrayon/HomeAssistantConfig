@@ -1,0 +1,5 @@
+platform: mqtt
+name: git_status_deleted
+state_topic: "homeassistant/git_status_deleted"
+value_template: "{{ value_json }}"
+json_attributes_topic: "homeassistant/git_status_deleted/attributes"

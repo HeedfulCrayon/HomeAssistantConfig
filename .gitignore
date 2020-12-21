@@ -8,7 +8,6 @@
 *.sqlite
 *.pyc
 ._*
-*.sh
 *.json
 __pycache__
 

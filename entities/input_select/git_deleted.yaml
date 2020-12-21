@@ -1,5 +1,0 @@
-git_deleted:
-  name: Git To Be Deleted
-  icon: mdi:git
-  options:
-    - "Empty"

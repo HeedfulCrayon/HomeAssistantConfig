@@ -1,1 +1,1 @@
-git_update: /config/git_get_status.sh "{{ states("input_text.local_base_url") }}"
+git_update: /config/shell_scripts/git_get_status.sh "{{ states("input_text.local_base_url") }}"

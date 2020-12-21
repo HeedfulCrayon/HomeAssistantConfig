@@ -5,13 +5,13 @@ trigger:
 - platform: webhook
   webhook_id: git_status
 action:
-  - service: input_select.set_options
-    data_template:
-      options: >
-        {% for x in trigger.json.delete %}
-          - "{{ x }}"
-        {% endfor %}
-      entity_id: input_select.git_deleted
+#   - service: input_select.set_options
+#     data_template:
+#       options: >
+#         {% for x in trigger.json.delete %}
+#           - "{{ x }}"
+#         {% endfor %}
+#       entity_id: input_select.git_deleted
       # {% if loop.first %}
       #       "{{ x }}",
       #     {% elif loop.last %}
@@ -19,17 +19,46 @@ action:
       #     {% else %}
       #       "{{ x }}",
       #     {% endif %}
-  # - service: input_select.set_options
-  #   data_template:
-  #     options: >
-  #       {{ trigger.json.added }}
-  #     entity_id: input_select.git_add
-  # - service: input_select.set_options
-  #   data_template:
-  #     options: >
-  #       {{ trigger.json.modify }}
-  #     entity_id: input_select.git_modified
-
+#   - service: input_text.set_value
+#      data_template:
+#       value: >
+#          {{ trigger.json.add }}
+#       entity_id: input_text.git_files_added
+#   - service: input_text.set_value
+#      data_template:
+#       options: >
+#          {{ trigger.json.modify }}
+#       entity_id: input_text.git_files_modified
+   - service: mqtt.publish
+     data_template:
+       topic: homeassistant/git_status_added
+       payload: '{{ trigger.json.add_count }}'
+       retain: true
+   - service: mqtt.publish
+     data_template:
+       topic: homeassistant/git_status_added/attributes
+       payload_template: '{{ trigger.json.add | tojson }}'
+       retain: true
+   - service: mqtt.publish
+     data_template:
+       topic: homeassistant/git_status_modified
+       payload: '{{ trigger.json.modify_count }}'
+       retain: true
+   - service: mqtt.publish
+     data_template:
+       topic: homeassistant/git_status_modified/attributes
+       payload_template: '{{ trigger.json.modify | tojson }}'
+       retain: true
+   - service: mqtt.publish
+     data_template:
+       topic: homeassistant/git_status_deleted
+       payload: '{{ trigger.json.delete_count }}'
+       retain: true
+   - service: mqtt.publish
+     data_template:
+       topic: homeassistant/git_status_deleted/attributes
+       payload_template: '{{ trigger.json.delete | tojson }}'
+       retain: true
   # - service: input_text.set_value
   #   data_template:
   #     value: >
@@ -37,17 +66,17 @@ action:
   #         {{ x }}
   #       {% endfor %}
   #     entity_id: input_text.git_deleted
-  # - service: input_text.set_value
-  #   data_template:
-  #     value: >
-  #       {% for x in trigger.json.add %}
-  #         {{ x }}
-  #       {% endfor %}
-  #     entity_id: input_text.git_added
-  # - service: input_text.set_value
-  #   data_template:
-  #     value: >
-  #       {% for x in trigger.json.modify %}
-  #         {{ x }}
-  #       {% endfor %}
-  #     entity_id: input_text.git_modified
+#   - service: input_text.set_value
+#      data_template:
+#       value: >
+#          {% for x in trigger.json.add %}
+#           {{ x }}
+#          {% endfor %}
+#       entity_id: input_text.git_added
+#   - service: input_text.set_value
+#      data_template:
+#       value: >
+#          {% for x in trigger.json.modify %}
+    #       {{ x }}
+    #      {% endfor %}
+    #   entity_id: input_text.git_modified

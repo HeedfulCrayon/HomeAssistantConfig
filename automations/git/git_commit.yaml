@@ -8,3 +8,4 @@ action:
   data:
     entity_id: input_text.commit_message
     value: ""
+- service: shell_command.git_update
