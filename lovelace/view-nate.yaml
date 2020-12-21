@@ -1,0 +1,13 @@
+path: nate
+title: Nate
+visible:
+  - user: a77e456140c24cd481a410df7aa167e1
+badges:
+  - entity: sun.sun
+  - entity: sensor.hacs
+cards:
+  # - entity: sensor.garbage
+  #   type: 'custom:garbage-collection-card'
+  - !include views/nate/system_resources.yaml
+  - !include views/nate/security_sensors.yaml
+  - !include views/nate/pihole_stats.yaml

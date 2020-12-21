@@ -1,0 +1,16 @@
+platform: min_max
+name: Average Sensor RSSI
+round_digits: 0
+type: mean
+entity_ids:
+  - sensor.front_door_connection
+  - sensor.garage_door_connection
+  - sensor.sliding_door_connection
+  - sensor.bathroom_window_connection
+  - sensor.kitchen_window_connection
+  - sensor.lr_n_window_connection
+  - sensor.lr_nw_window_connection
+  - sensor.lr_sw_window_connection
+  - sensor.basement_e_window_connection
+  - sensor.basement_w_window_connection
+  - sensor.motion_connection

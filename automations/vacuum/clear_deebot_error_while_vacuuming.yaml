@@ -1,0 +1,37 @@
+id: clear_deebot_error_while_vacuuming
+alias: Deebot Automatic Error Clear
+trigger:
+  - platform: state
+    entity_id: vacuum.deebot
+    attribute: status
+    from: auto
+    to: stop
+mode: single
+action:
+  - choose:
+      # If switch on and battery greater than 30
+      - conditions: >
+          {{ is_state('input_boolean.vacuum_upstairs', 'on') and states.vacuum.deebot.attributes.battery_level  > 30 }}
+        sequence:
+        - service: vacuum.turn_on
+          data: {}
+          entity_id: vacuum.deebot
+        - delay: 00:00:05
+        - service: vacuum.set_fan_speed
+          data: {
+              fan_speed: 'high'
+          }
+          entity_id: vacuum.deebot
+      # If switch is on and battery less than 30
+      - conditions: >
+          {{ is_state('input_boolean.vacuum_upstairs', 'on') and states.vacuum.deebot.attributes.battery_level  < 30 }}
+        sequence:
+        - service: vacuum.turn_off
+          data: {}
+          entity_id: vacuum.deebot
+        - service: input_boolean.turn_off
+          data: {}
+          entity_id: input_boolean.vacuum_upstairs
+        - service: vacuum.return_to_base
+          data: {}
+          entity_id: vacuum.deebot

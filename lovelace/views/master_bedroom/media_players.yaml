@@ -1,0 +1,11 @@
+card:
+  type: entities
+filter:
+  include:
+    - area: Bedroom
+      domain: media_player
+      options:
+        artwork: cover
+        artwork_border: true
+        type: 'custom:mini-media-player'
+type: 'custom:auto-entities'

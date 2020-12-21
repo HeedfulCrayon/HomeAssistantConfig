@@ -1,0 +1,7 @@
+home_displays_group:
+  name: House Displays
+  entities:
+    - media_player.shield_tv
+    - media_player.playroom_tv
+    - media_player.bedroom
+    - media_player.kitchen_display

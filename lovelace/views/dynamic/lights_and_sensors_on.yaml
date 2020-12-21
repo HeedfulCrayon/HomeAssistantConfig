@@ -1,0 +1,29 @@
+card:
+  columns: 4
+  type: glance
+filter:
+  exclude:
+    - attributes:
+        is_group: 'true'
+    - attributes:
+        is_hue_group: true
+    - attributes:
+        stay_on: true
+  include:
+    - domain: light
+      options:
+        tap_action:
+          action: toggle
+      state: 'on'
+    - domain: switch
+      options:
+        tap_action:
+          action: toggle
+      state: 'on'
+    - attributes:
+        sensor_brand: wyze
+      domain: binary_sensor
+      state: 'on'
+sort: name
+show_empty: false
+type: 'custom:auto-entities'

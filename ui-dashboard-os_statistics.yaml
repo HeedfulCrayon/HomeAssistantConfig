@@ -1,0 +1,3 @@
+title: OS Statistics
+views:
+  - !include lovelace/view-os_stats.yaml

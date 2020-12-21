@@ -1,0 +1,19 @@
+name: Movie
+icon: 'mdi:movie'
+entities:
+  light.home_lamp:
+    state: off
+  light.chrome_lamp:
+    state: off
+  light.basket_lamp:
+    state: on
+    brightness: 1
+  light.standing_lamp:
+    state: off
+  light.tv_white:
+    state: on
+    brightness: 15
+  light.tv_color:
+    state: on
+    rgb_color: [255, 170, 0] #Orange
+    brightness: 100

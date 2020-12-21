@@ -1,0 +1,3 @@
+media_player.kitchen_display:
+  is_smart_speaker: 'true'
+  is_chromecast: true

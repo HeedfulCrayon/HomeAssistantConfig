@@ -1,0 +1,14 @@
+id: kodi_movie_playing_at_night
+alias: Kodi Movie Playing At Night
+description: ''
+trigger:
+- platform: state
+  entity_id: media_player.kodi
+  to: playing
+condition:
+- condition: sun
+  before: sunrise
+  after: sunset
+action:
+- scene: scene.movie
+mode: single

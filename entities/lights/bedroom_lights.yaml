@@ -1,0 +1,5 @@
+platform: group
+name: Bedroom Lights
+entities:
+  - light.joslyn_s_lamp
+  - light.nate_s_lamp

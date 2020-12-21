@@ -1,0 +1,7 @@
+name: Kids Get Ready for Bed
+icon: 'mdi:weather-night'
+entities:
+  light.kids_light:
+    state: on
+    rgb_color: [127, 0, 255]
+    brightness: 100

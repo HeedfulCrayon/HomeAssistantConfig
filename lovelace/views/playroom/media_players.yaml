@@ -1,0 +1,22 @@
+type: horizontal-stack
+cards:
+  - artwork: cover
+    artwork_border: true
+    type: 'custom:mini-media-player'
+    entity: media_player.playroom_tv
+    info: short
+    name: TV
+    icon: 'mdi:television'
+    hide:
+      mute: true
+      power_state: false
+  - artwork: cover
+    artwork_border: true
+    type: 'custom:mini-media-player'
+    entity: media_player.playroom_speaker
+    info: short
+    name: Speaker
+    icon: 'mdi:speaker'
+    hide:
+      mute: true
+      power_state: false

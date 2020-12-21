@@ -1,0 +1,14 @@
+title: Home
+views:
+  - !include lovelace/view-home.yaml
+  - !include lovelace/view-living_room.yaml
+  - !include lovelace/view-master_bedroom.yaml
+  - !include lovelace/view-playroom.yaml
+  - !include lovelace/view-information.yaml
+  - !include lovelace/view-speakers.yaml
+  - !include lovelace/view-media_players.yaml
+  - !include lovelace/view-lights.yaml
+  - !include lovelace/view-cameras.yaml
+  - !include lovelace/view-sprinklers.yaml
+  - !include lovelace/view-chores.yaml
+  - !include lovelace/view-nate.yaml

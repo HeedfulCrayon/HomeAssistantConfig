@@ -1,0 +1,4 @@
+nursery_devices:
+    name: Nursery Devices
+    entities:
+      - media_player.playroom_speaker

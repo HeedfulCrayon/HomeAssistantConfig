@@ -1,0 +1,12 @@
+id: '1572830550481'
+alias: Notify on boot
+description: ''
+trigger:
+- event: start
+  platform: homeassistant
+condition: []
+action:
+- data:
+    message: Home Assistant has restarted
+    title: HA
+  service: notify.mobile_app_nate_phone

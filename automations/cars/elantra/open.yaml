@@ -1,0 +1,19 @@
+id: 'elantra_presence_open'
+alias: Elantra Presence Open
+description: ''
+trigger:
+- entity_id: binary_sensor.elantrapresence
+  from: 'off'
+  platform: state
+  to: 'on'
+condition:
+- condition: state
+  entity_id: cover.garage_double_door
+  state: closed
+action:
+- data:
+    message: Garage Opening
+    title: Elantra
+  service: notify.mobile_app_nate_phone
+- entity_id: cover.garage_double_door
+  service: cover.open_cover

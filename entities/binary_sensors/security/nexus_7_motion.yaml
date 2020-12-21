@@ -1,0 +1,9 @@
+platform: mqtt
+name: "Nexus 7 Motion"
+state_topic: 'fully/event/onMotion/nexus_7'
+device_class: motion
+off_delay: 10
+payload_on: 'on'
+payload_off: 'off'
+value_template: "{% if value_json.type == 'visual' and value_json.event == 'onMotion' %}on{% endif %}"
+qos: 1

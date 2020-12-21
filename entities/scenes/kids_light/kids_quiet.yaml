@@ -1,0 +1,7 @@
+name: Kids Quiet
+icon: 'mdi:volume-mute'
+entities:
+  light.kids_light:
+    state: on
+    rgb_color: [255, 165, 0]
+    brightness: 50

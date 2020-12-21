@@ -1,0 +1,91 @@
+# entities:
+#   - entity: sensor.processor_use
+#     name: CPU
+#   - entity: sensor.memory_use_percent
+#     name: Memory
+#   - entity: sensor.disk_use_percent
+#     name: Disk
+# hours_to_show: 6
+# name: System Resources
+# points_per_hour: 12
+# refresh_interval: 10
+# type: 'custom:mini-graph-card'
+
+type: 'custom:vertical-stack-in-card'
+title: System Resources
+cards:
+  - entities:
+      - entity: sensor.processor_use
+        name: CPU
+        show_fill: false
+    align_icon: left
+    align_state: center
+    animate: true
+    hours_to_show: 6
+    name: CPU
+    points_per_hour: 12
+    refresh_interval: 10
+    type: 'custom:mini-graph-card'
+  - type: 'custom:bar-card'
+    entities:
+      - entity: sensor.disk_use_percent
+        name: Disk Usage
+        positions:
+          icon: inside
+          name: inside
+          indicator: 'off'
+        icon: 'mdi:harddisk'
+        animation:
+          state: 'on'
+        severity:
+          - from: 0
+            to: 50
+            color: '#40bf40'
+          - from: 51
+            to: 80
+            color: '#ffde00'
+          - from: 81
+            to: 100
+            color: '#bf4040'
+      - entity: sensor.memory_use_percent
+        name: Memory
+        positions:
+          icon: inside
+          name: inside
+          indicator: 'off'
+        icon: 'mdi:memory'
+        animation:
+          state: 'on'
+        severity:
+          - from: 0
+            to: 50
+            color: '#40bf40'
+          - from: 51
+            to: 80
+            color: '#ffde00'
+          - from: 81
+            to: 100
+            color: '#bf4040'
+    height: 50px
+    style: |-
+      bar-card-value {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        text-shadow: 1px 1px #0005;
+      }
+      bar-card-name {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        text-shadow: 1px 1px #0005;
+      }
+      ha-icon {
+        color: white;
+      }
+      ha-card {
+        padding: 0px;
+      }
+      bar-card-current, bar-card-backgroundbar, bar-card-currentbar {
+        border-radius: 10px;
+      }

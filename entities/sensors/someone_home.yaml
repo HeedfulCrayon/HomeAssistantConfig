@@ -1,0 +1,10 @@
+platform: template
+sensors:
+  someone_home:
+    friendly_name: 'Is anyone home?'
+    value_template: >-
+      {% if states("device_tracker.nate_phone") != "home" and states("device_tracker.joslyn_phone") != "home" and states("input_boolean.house_guests") == "off" %}
+        false
+      {% else %}
+        true
+      {% endif %}

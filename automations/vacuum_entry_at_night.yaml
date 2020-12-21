@@ -1,0 +1,12 @@
+id: 'vacuum_entry_at_night'
+alias: Vacuum entry
+description: 'Vacuum entry at 8 PM'
+trigger:
+    platform: time
+    at: "20:00:00"
+action:
+- service: xiaomi_miio.vacuum_clean_zone
+  data:
+    entity_id: vacuum.xiaomi_vacuum_cleaner
+    repeats: 3
+    zone: [[20398, 26000, 25100, 23790]]

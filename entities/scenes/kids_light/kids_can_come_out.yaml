@@ -1,0 +1,7 @@
+name: Kids can come out
+icon: 'mdi:door_open'
+entities:
+  light.kids_light:
+    state: on
+    rgb_color: [0, 255, 0]
+    brightness: 20

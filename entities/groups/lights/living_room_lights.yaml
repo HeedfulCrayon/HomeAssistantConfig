@@ -1,0 +1,8 @@
+living_room_lights:
+    name: Living Room Lights
+    icon: mdi:lightbulb-group
+    entities:
+      - light.basket_lamp
+      - light.chrome_lamp
+      - light.standing_lamp
+      - light.home_lamp

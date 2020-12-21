@@ -1,0 +1,5 @@
+exterior_devices:
+    name: Exterior Devices
+    entities:
+      - light.front_lights
+      - cover.garage_double_door

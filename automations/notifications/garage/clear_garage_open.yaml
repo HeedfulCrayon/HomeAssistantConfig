@@ -1,0 +1,15 @@
+id: 'clear_garage_open_notification'
+alias: Clear Garage Open Notification
+description: ''
+trigger:
+- entity_id: cover.garage_double_door
+  from: open
+  platform: state
+  to: closed
+condition: []
+action:
+- data:
+    data:
+      tag: garage_open
+    message: clear_notification
+  service: notify.all_phones

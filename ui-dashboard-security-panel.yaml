@@ -1,0 +1,3 @@
+title: Security Panel
+views:
+  - !include lovelace/view-security_panel.yaml

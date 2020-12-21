@@ -1,0 +1,12 @@
+id: 'notify_on_shutdown'
+alias: Notify on Shutdown
+description: ''
+trigger:
+- event: shutdown
+  platform: homeassistant
+condition: []
+action:
+- data:
+    message: Home Assistant is shutting down
+    title: HA
+  service: notify.mobile_app_nate_phone

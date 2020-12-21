@@ -1,0 +1,7 @@
+name: Kids in Bed
+icon: 'mdi:bed-empty'
+entities:
+  light.kids_light:
+    state: on
+    rgb_color: [255, 0, 0]
+    brightness: 10

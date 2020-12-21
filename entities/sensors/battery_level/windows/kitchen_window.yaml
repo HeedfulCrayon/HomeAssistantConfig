@@ -1,0 +1,10 @@
+platform: template
+sensors:
+  kitchen_window_battery:
+    friendly_name: Kitchen Window Battery
+    unit_of_measurement: '%'
+    value_template: >-
+      {{ states.binary_sensor.wyzesense_kitchen_window.attributes.battery_level }}
+    icon_template: mdi:battery-{{ (states.binary_sensor.wyzesense_kitchen_window.attributes.battery_level / 10) | int | multiply(10) | int }}
+    attribute_templates:
+      type: battery

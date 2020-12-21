@@ -1,0 +1,6 @@
+doors:
+    name: Doors
+    entities:
+      - binary_sensor.wyzesense_garage_door
+      - binary_sensor.wyzesense_front_door
+      - binary_sensor.wyzesense_sliding_door

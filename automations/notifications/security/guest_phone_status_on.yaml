@@ -1,0 +1,13 @@
+alias: 'Guests using phone'
+condition:
+  condition: state
+  entity_id: input_boolean.house_guests
+  state: 'off'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.guest_phone_connected
+    to: 'on'
+action:
+   service: input_boolean.turn_on
+   data:
+     entity_id: input_boolean.house_guests

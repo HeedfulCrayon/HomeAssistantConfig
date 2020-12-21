@@ -1,0 +1,11 @@
+platform: influxdb
+username: !secret influxdb_user
+password: !secret influxdb_password
+database: unifi
+queries:
+  - name: Nate phone connected to upstairs AP
+    measurement: '"autogen"."clients"'
+    where: 'time > now() - 30s AND "ap_name"=''Upstairs AP'' AND ("name"=''Nate Phone'' OR "name"=''Nate-Phone'')'
+    field: hostname
+    value_template: '{{ value | int > 0 }}'
+    group_function: count

@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  external_upload:
+    friendly_name: "Upload Speed"
+    unit_of_measurement: 'mbps'
+    value_template: "{{ states('sensor.speedtest_upload')|int }}"

@@ -1,0 +1,5 @@
+christmas_tree_lights:
+    name: Christmas Tree Lights
+    entities:
+      - switch.tree_lights
+      - switch.tree_star

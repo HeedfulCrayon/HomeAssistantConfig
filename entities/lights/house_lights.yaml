@@ -1,0 +1,13 @@
+platform: group
+name: House Lights
+entities:
+    - light.basket_lamp
+    - light.chrome_lamp
+    - light.home_lamp
+    - light.joslyn_s_lamp
+    - light.nate_s_lamp
+    - light.office_lamp
+    - light.standing_lamp
+    - light.streaming_light
+    - light.tv_color
+    - light.tv_white

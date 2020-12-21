@@ -1,0 +1,10 @@
+#
+# This handles the loading of my weather platforms.
+#
+# https://www.home-assistant.io/integrations/weather/
+#
+weather:
+#   - platform: openweathermap
+#     api_key: !secret openweather_api_key
+#     latitude: 40.345391
+#     longitude: -111.966069

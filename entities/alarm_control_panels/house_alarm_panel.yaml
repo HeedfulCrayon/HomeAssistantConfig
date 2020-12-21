@@ -1,0 +1,12 @@
+platform: manual
+name: Home Alarm
+code: !secret disarm_code
+code_arm_required: false
+arming_time: 60
+delay_time: 60
+trigger_time: 4
+disarmed:
+  trigger_time: 0
+armed_home:
+  arming_time: 0
+  delay_time: 0

@@ -1,0 +1,37 @@
+id: 'walmart_shopping_notify_and_clear'
+alias: Shopping list notify and clear - Walmart
+description: ''
+trigger:
+- platform: state
+  entity_id: 
+    - person.nate
+    - person.joslyn
+condition: []
+action:
+- choose:
+    # Send Notification
+    - conditions:
+        - condition: template
+          value_template: "{{ trigger.to_state.state == 'Walmart' }}"
+      sequence:
+        - data_template:
+            data:
+              actions:
+                - action: "URI"
+                  title: "Open in Keep"
+                  uri: !secret keep_shopping_list
+              tag: shopping_walmart
+              channel: Shopping
+            message: Check your shopping list!
+            title: Shopping
+          service_template: notify.mobile_app_{{ trigger.entity_id.split('.')[1] }}_phone
+    # Clear Notification
+    - conditions:
+        - condition: template
+          value_template: "{{ trigger.from_state.state == 'Walmart' }}"
+      sequence:
+        - data:
+            data:
+              tag: shopping_walmart
+            message: clear_notification
+          service_template: notify.mobile_app_{{ trigger.entity_id.split('.')[1] }}_phone

@@ -1,0 +1,2 @@
+binary_sensor.wyzesense_motion:
+  sensor_brand: wyze

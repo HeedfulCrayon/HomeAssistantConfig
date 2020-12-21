@@ -1,0 +1,3 @@
+binary_sensor.wyzesense_lr_sw_window:
+  device_class: window
+  sensor_brand: wyze

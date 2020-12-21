@@ -1,0 +1,36 @@
+# Generic Ignores
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.txt
+*.xml
+*.sqlite
+*.pyc
+._*
+*.sh
+*.json
+__pycache__
+
+# You can whitelist files/folders with !, these will not be ignored.
+!*.yaml
+!.gitignore
+!*.md
+
+# Ignore folders.
+.storage
+.cloud
+.google.token
+.vscode
+custom_components
+www
+temp
+ssh
+ssl
+
+# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+zwcfg_*
+.uuid

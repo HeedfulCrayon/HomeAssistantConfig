@@ -1,0 +1,3 @@
+platform: nfandroidtv
+name: shield notification
+host: !secret shield_ip

@@ -1,0 +1,6 @@
+entities:
+  - entity: light.joslyn_s_lamp
+  - entity: light.nate_s_lamp
+show_header_toggle: true
+title: Lights
+type: entities

@@ -1,0 +1,26 @@
+id: '1572160684044'
+alias: TV Light On
+description: ''
+trigger:
+- entity_id: media_player.shield_tv
+  from: 'off'
+  platform: state
+- entity_id: media_player.shield_tv
+  platform: state
+  from: 'idle'
+condition: []
+action:
+- alias: ''
+  data:
+    brightness_pct: 30
+    entity_id: light.tv_white
+    transition: 5
+  service: light.turn_on
+- alias: ''
+  data:
+    brightness_pct: 20
+    color_name: orange
+    entity_id: light.tv_color
+    transition: 5
+    effect: stop
+  service: light.turn_on

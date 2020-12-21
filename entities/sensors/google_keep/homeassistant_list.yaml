@@ -1,0 +1,6 @@
+# platform: google_keep
+# name: "Home Assistant Todos"
+# username: !secret google_user
+# password: !secret google_password
+# labels:
+# - 'Home Assistant'

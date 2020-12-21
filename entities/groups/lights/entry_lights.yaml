@@ -1,0 +1,6 @@
+entry_lights:
+    name: Entry Lights
+    icon: mdi:lightbulb-group
+    entities:
+      - switch.entry_garland
+      - light.entry_lamp

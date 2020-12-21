@@ -1,0 +1,10 @@
+windows:
+    name: Windows
+    entities:
+      - binary_sensor.wyzesense_kitchen_window
+      - binary_sensor.wyzesense_lr_n_window
+      - binary_sensor.wyzesense_lr_nw_window
+      - binary_sensor.wyzesense_lr_sw_window
+      - binary_sensor.wyzesense_bathroom_window
+      - binary_sensor.wyzesense_basement_w_window
+      - binary_sensor.wyzesense_basement_e_window

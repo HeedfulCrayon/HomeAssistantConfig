@@ -1,0 +1,10 @@
+title: Chores
+path: chores
+icon: 'mdi:list-status'
+panel: true
+badges: []
+cards:
+  - type: horizontal-stack
+    cards:
+      - !include views/chores/joslyn.yaml
+      - !include views/chores/nate.yaml

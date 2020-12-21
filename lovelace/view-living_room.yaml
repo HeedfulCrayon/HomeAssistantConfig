@@ -1,0 +1,10 @@
+path: living-room
+title: Living Room
+icon: 'mdi:sofa'
+badges: []
+cards:
+  - !include views/living_room/lights.yaml
+  - !include views/living_room/tv_control.yaml
+  - !include views/cameras/doorbell.yaml
+  - !include views/living_room/vacuum.yaml
+#   - !include views/living_room/environment_graphs.yaml

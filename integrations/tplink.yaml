@@ -1,0 +1,8 @@
+tplink:
+  discovery: false
+  dimmer:
+  - host: !secret tp_link_front_lights_ip
+  switch:
+  - host: !secret tp_link_tree_star_ip
+  - host: !secret tp_link_tree_lights_ip
+  - host: !secret tp_link_nursery_lamp_ip

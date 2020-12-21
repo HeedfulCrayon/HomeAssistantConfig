@@ -1,0 +1,16 @@
+platform: min_max
+name: Minimum Sensor Battery
+round_digits: 0
+type: min
+entity_ids:
+  - sensor.front_door_battery
+  - sensor.garage_door_battery
+  - sensor.sliding_door_battery
+  - sensor.bathroom_window_battery
+  - sensor.kitchen_window_battery
+  - sensor.lr_n_window_battery
+  - sensor.lr_nw_window_battery
+  - sensor.lr_sw_window_battery
+  - sensor.basement_e_window_battery
+  - sensor.basement_w_window_battery
+  - sensor.motion_battery

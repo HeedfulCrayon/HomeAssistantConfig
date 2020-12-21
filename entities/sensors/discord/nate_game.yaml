@@ -1,0 +1,5 @@
+platform: template
+sensors:
+  nate_game:
+    value_template: >-
+      {{ state_attr('sensor.discord_heedfulcrayon_6827', 'game') }}

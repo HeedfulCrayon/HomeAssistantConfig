@@ -1,0 +1,82 @@
+path: joslyn-main
+title: Home
+icon: mdi:home
+cards:
+  - type: button
+    entity: group.living_room_devices
+    tap_action:
+      action: navigate
+      navigation_path: /joslyn-panel/living-room
+    hold_action:
+      action: toggle
+    icon: 'mdi:sofa'
+  - type: button
+    entity: group.bedroom_devices
+    tap_action:
+      action: navigate
+      navigation_path: /joslyn-panel/bedroom
+    hold_action:
+      action: toggle
+    icon: 'mdi:bed'
+  - type: button
+    entity: group.girls_room_devices
+    tap_action:
+      action: navigate
+      navigation_path: /joslyn-panel/playroom
+    hold_action:
+      action: toggle
+    icon: 'mdi:toy-brick'
+  - type: button
+    name: Home / Garage
+    entity: cover.garage_double_door
+    tap_action:
+      action: navigate
+      navigation_path: /joslyn-panel/home
+    hold_action:
+      action: toggle
+  - type: button
+    name: Chores
+    tap_action:
+      action: navigate
+      navigation_path: /joslyn-panel/chores
+    icon: 'mdi:list-status'
+  - type: button
+    entity: light.house_lights
+    name: Lights
+    tap_action:
+      action: navigate
+      navigation_path: /joslyn-panel/lights
+    hold_action: 
+      action: toggle
+    icon: 'mdi:lightbulb-group'
+  - type: button
+    entity: group.house_speakers_group
+    name: Smart Speakers
+    tap_action:
+      action: navigate
+      navigation_path: /joslyn-panel/speakers
+    hold_action: 
+      action: toggle
+    icon: 'mdi:speaker-multiple'
+  - type: button
+    entity: group.home_displays_group
+    name: Chromecasts
+    tap_action:
+      action: navigate
+      navigation_path: /joslyn-panel/media
+    hold_action: 
+      action: toggle
+    icon: 'mdi:television'
+  - type: button
+    name: Cameras
+    tap_action:
+      action: navigate
+      navigation_path: /joslyn-panel/cameras
+    icon: 'mdi:cctv'
+  - type: button
+    # entity: TODO
+    name: Sprinklers
+    tap_action:
+      action: navigate
+      navigation_path: /joslyn-panel/sprinkler
+    icon: 'mdi:sprinkler-variant'

@@ -1,0 +1,34 @@
+# platform: cololight
+# name: kids_light
+# host: 192.168.107.125
+# custom_effects:
+#   - name: Cleanup Fast
+#     color_scheme: Breath
+#     color: Rainbow
+#     cycle_speed: 30
+#     mode: 27
+#   - name: Cleanup Medium
+#     color_scheme: Flash
+#     color: Rainbow
+#     cycle_speed: 30
+#     mode: 27
+#   - name: Cleanup Slow
+#     color_scheme: Flicker
+#     color: Rainbow
+#     cycle_speed: 30
+#     mode: 27
+#   - name: Cleanup Done
+#     color_scheme: Flash
+#     color: Red
+#     cycle_speed: 15
+#     mode: 3
+#   - name: Stay In Bed
+#     color_scheme: Mood
+#     color: Red
+#     cycle_speed: 10
+#     mode: 16
+#   - name: Can Come Out
+#     color_scheme: Mood
+#     color: Green
+#     cycle_speed: 10
+#     mode: 16

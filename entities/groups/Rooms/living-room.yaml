@@ -1,0 +1,12 @@
+living_room_devices:
+    name: Living Room Devices
+    entities:
+      - light.basket_lamp
+      - light.chrome_lamp
+      - light.standing_lamp
+      - light.home_lamp
+      - light.tv_color
+      - light.tv_white
+      - switch.tree_lights
+      - switch.tree_star
+      - media_player.shield_tv

@@ -1,0 +1,7 @@
+path: bedroom
+title: Bedroom
+icon: 'mdi:bed-king'
+badges: []
+cards:
+  - !include views/master_bedroom/lights.yaml
+  - !include views/master_bedroom/media_players.yaml

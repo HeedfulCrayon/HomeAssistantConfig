@@ -1,0 +1,5 @@
+assistant_broadcast:
+    url: !secret assistant_relay
+    method: POST
+    content_type: 'application/json'
+    payload: '{"command":"{{ command }}", "user":"Home", "broadcast":true}'

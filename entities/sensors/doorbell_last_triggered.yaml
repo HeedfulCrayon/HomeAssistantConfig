@@ -1,0 +1,5 @@
+platform: template
+sensors:
+  doorbell_last_triggered:
+    value_template: >-
+      {{ state_attr('automation.doorbell_speakers', 'last_triggered') }}

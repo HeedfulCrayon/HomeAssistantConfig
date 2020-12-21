@@ -1,0 +1,3 @@
+platform: ffmpeg
+input: !secret garage_rtsp_camera_url
+name: garage

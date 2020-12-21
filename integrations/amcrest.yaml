@@ -1,0 +1,7 @@
+# amcrest:
+#   - host: !secret amcrest_ip
+#     username: !secret amcrest_user
+#     password: !secret amcrest_password
+#     stream_source: rtsp
+#     binary_sensors:
+#       - audio_detected

@@ -1,0 +1,26 @@
+id: 'notify_nate_chores'
+alias: Notify Nate Chores
+description: ''
+trigger: 
+  - platform: time
+    at: "9:00:00"
+  - platform: time
+    at: "12:00:00"
+  - platform: time
+    at: "16:00:00"
+  - platform: time
+    at: "20:00:00"
+condition:
+  condition: numeric_state
+  entity_id: sensor.nate_today_chores
+  above: 0
+action:
+  service: notify.mobile_app_nate_phone
+  data:
+    message: "{{ states.sensor.nate_today_chores.attributes.chores_list|join(', ') }}"
+    title: "Daily Chores {{ states('sensor.nate_today_chores') }}"
+    data:
+      actions:
+        - action: "URI"
+          title: "Open Chores"
+          uri: /lovelace/chores

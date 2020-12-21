@@ -1,0 +1,21 @@
+id: '1576527467032'
+alias: notify when I leave work
+description: ''
+trigger:
+- entity_id: person.nate
+  event: leave
+  platform: zone
+  zone: zone.work
+condition: []
+action:
+- alias: ''
+  data:
+    data:
+      image: https://media.tenor.com/images/d4e0c039ed0d2b31af296f73abed7174/tenor.gif
+    message: Nate is on his way home
+    title: WooHoo!
+  service: notify.mobile_app_nate_phone
+- data:
+    message: Nate is on his way home
+    title: WooHoo!
+  service: notify.mobile_app_joslyn_phone

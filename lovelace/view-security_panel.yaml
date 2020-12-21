@@ -1,0 +1,17 @@
+title: Security Panel
+path: security
+icon: mdi:shield-home
+panel: true
+badges: []
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:vertical-stack-in-card'
+        cards:
+          - type: glance
+            entities:
+              - entity: binary_sensor.home_safe
+            show_state: false
+          - !include views/security/sensor_stats.yaml
+          - !include views/dynamic/sensors_on.yaml
+      - !include views/security/home_panel.yaml

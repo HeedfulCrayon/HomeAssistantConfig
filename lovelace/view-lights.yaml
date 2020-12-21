@@ -1,0 +1,35 @@
+path: lights
+title: Lights
+icon: 'mdi:lightbulb'
+badges: []
+cards:
+  - !include views/lights/house_lights.yaml
+#   - cards:
+#       - entities:
+#           - entity: light.front_lights
+#           - entity: light.bedroom_lights
+#             icon: 'mdi:lightbulb-group'
+#             name: Bedroom
+#           - entity: light.nate_s_lamp
+#           - entity: light.joslyn_s_lamp
+#           - entity: light.office_lights
+#             icon: 'mdi:lightbulb-group'
+#             name: Office
+#           - entity: light.office_lamp
+#           - entity: light.streaming_light
+#         show_header_toggle: false
+#         type: entities
+#       - entities:
+#           - entity: light.living_room_lights
+#             icon: 'mdi:lightbulb-group'
+#             name: Living Room
+#           - entity: light.basket_lamp
+#           - entity: light.chrome_lamp
+#           - entity: light.home_lamp
+#           - entity: light.standing_lamp
+#           - entity: light.tv_color
+#           - entity: light.tv_white
+#         show_header_toggle: false
+#         type: entities
+#     title: Lights
+#     type: horizontal-stack

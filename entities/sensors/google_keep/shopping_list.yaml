@@ -1,0 +1,6 @@
+# platform: google_keep
+# name: "Shopping List"
+# username: !secret google_user
+# password: !secret google_password
+# labels:
+# - 'Grocery'

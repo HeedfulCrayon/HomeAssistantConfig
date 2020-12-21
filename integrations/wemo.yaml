@@ -1,0 +1,5 @@
+# Example configuration.yaml entry with automatic discovery disabled, and 2 statically configured devices
+# wemo:
+#   discovery: false
+#   static:
+#     - 192.168.107.39

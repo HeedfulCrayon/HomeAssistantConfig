@@ -1,0 +1,54 @@
+path: speakers
+title: Speakers
+icon: 'mdi:speaker-multiple'
+badges: []
+cards:
+  - card:
+      title: Smart Speakers
+      type: entities
+    filter:
+      include:
+        - attributes:
+            is_smart_speaker: 'true'
+          domain: media_player
+          options:
+            artwork: cover
+            artwork_border: true
+            hide:
+              power: true
+            type: 'custom:mini-media-player'
+          state: playing
+        - attributes:
+            is_smart_speaker: 'true'
+          domain: media_player
+          options:
+            artwork: cover
+            artwork_border: true
+            hide:
+              power: true
+            type: 'custom:mini-media-player'
+          state: paused
+        - attributes:
+            is_smart_speaker: 'true'
+          domain: media_player
+          options:
+            artwork: cover
+            artwork_border: true
+            hide:
+              power: false
+            type: 'custom:mini-media-player'
+          state: 'off'
+        - attributes:
+            is_smart_speaker: 'true'
+          domain: media_player
+          options:
+            artwork: cover
+            artwork_border: true
+            hide:
+              power: false
+            type: 'custom:mini-media-player'
+          state: idle
+    sort:
+      method: state
+      reverse: true
+    type: 'custom:auto-entities'

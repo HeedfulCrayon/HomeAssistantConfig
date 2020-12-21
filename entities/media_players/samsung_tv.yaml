@@ -1,0 +1,7 @@
+platform: samsungtv_tizen
+host: '192.168.107.11'
+mac: 'e4:7d:bd:24:c1:9b'
+app_list: '{"Netflix": "11101200001"}'
+scan_app_http: false
+port: 8001
+timeout: 30

@@ -1,0 +1,5 @@
+platform: template
+sensors:
+  foobucket_game:
+    value_template: >-
+      {{ state_attr('sensors.discord_foobucket_4529', 'game') }}

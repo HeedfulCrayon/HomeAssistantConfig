@@ -1,0 +1,2 @@
+switch.pi_hole:
+  stay_on: true

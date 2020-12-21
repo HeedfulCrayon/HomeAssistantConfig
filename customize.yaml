@@ -1,0 +1,3 @@
+light.house_lights:
+  is_group: 'true'
+switch.pi_hole: {}

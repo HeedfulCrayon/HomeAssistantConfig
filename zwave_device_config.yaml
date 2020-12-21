@@ -1,0 +1,6 @@
+sensor.aeon_labs_dsb05_multisensor_luminance_2:
+  ignored: false
+  polling_intensity: 60
+binary_sensor.office_motion:
+  ignored: false
+  polling_intensity: 0

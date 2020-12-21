@@ -1,0 +1,4 @@
+girls_room_devices:
+    name: Girls Room Devices
+    entities:
+      - light.kids_light

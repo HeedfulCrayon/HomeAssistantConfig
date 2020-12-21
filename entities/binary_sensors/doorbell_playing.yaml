@@ -1,0 +1,5 @@
+platform: template
+sensors:
+  doorbell_playing:
+    value_template: >-
+      {{ states.media_player.doorbell_group.attributes['media_content_id'] == '{{ states.input_text.base_url.state }}/local/Doorbell.mp3' }}

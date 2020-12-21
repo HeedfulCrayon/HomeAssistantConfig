@@ -1,0 +1,6 @@
+office_lights:
+    name: Office Lights
+    icon: mdi:lightbulb-group
+    entities:
+      - light.office_lamp
+      - light.streaming_light

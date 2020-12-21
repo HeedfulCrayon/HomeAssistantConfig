@@ -1,0 +1,14 @@
+id: 'turn_on_playroom_tv_when_playing'
+alias: Play Room TV On
+description: ''
+trigger:
+- entity_id: media_player.playroom_tv
+  from: 'off'
+  platform: state
+condition: 
+  - condition: template
+    value_template: "{{ trigger.to_state.state != 'unavailable' }}"
+action:
+- service: switch.turn_on
+  data:
+    entity_id: switch.power_strip_switch_2

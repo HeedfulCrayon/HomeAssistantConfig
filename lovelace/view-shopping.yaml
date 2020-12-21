@@ -1,0 +1,8 @@
+path: grocery
+title: Grocery
+icon: 'mdi:cart'
+panel: true
+badges: []
+cards: 
+  - type: iframe
+    url: !secret keep_shopping_list

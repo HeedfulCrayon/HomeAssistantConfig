@@ -1,0 +1,35 @@
+id: 'bedroom_cleanup'
+alias: Bedroom Cleanup
+description: ''
+trigger: 
+  platform: event
+  event_type: timer.started
+  event_data:
+    entity_id: timer.clean_bedroom
+condition: []
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.kids_light
+      effect: 'Cleanup Fast'
+  - delay:
+      # seconds: 360
+      seconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.kids_light
+      effect: 'Cleanup Medium'
+  - delay:
+      # seconds: 180
+      seconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.kids_light
+      effect: 'Cleanup Slow'
+  - delay:
+        # seconds: 60
+        seconds: 10
+  - service: light.turn_on
+    data:
+      entity_id: light.kids_light
+      effect: 'Cleanup Done'

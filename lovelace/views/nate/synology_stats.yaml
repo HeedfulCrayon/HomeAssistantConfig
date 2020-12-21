@@ -1,0 +1,140 @@
+type: 'custom:vertical-stack-in-card'
+cards:
+  - type: entity-filter
+    state_filter:
+      - operator: '!='
+        value: ''
+    entities:
+      - input_text.git_deleted
+    card:
+      type: markdown
+      content: |
+        **Files to be deleted:**
+        {% for l in config.entities %}
+          {{ states(l.entity) }}
+        {%- endfor %}
+  - type: entity-filter
+    state_filter:
+      - operator: '!='
+        value: ''
+    entities:
+      - input_text.git_added
+    card:
+      type: markdown
+      content: |
+        **Files to be added:**
+        {% for l in config.entities %}
+          {{ states(l.entity) }}
+        {%- endfor %}
+  - type: entity-filter
+    state_filter:
+      - operator: '!='
+        value: ''
+    entities:
+      - input_text.git_modified
+    card:
+      type: markdown
+      content: |
+        **Files to be modified:**
+        {% for l in config.entities %}
+          {{ states(l.entity) }}
+        {%- endfor %}
+  - entities:
+      - action_name: Update Status
+        icon: 'mdi:git'
+        name: ' '
+        service: shell_command.git_update
+        type: call-service
+      - entity: input_text.commit_message
+        type: 'custom:text-input-row'
+      - action_name: Commit
+        icon: 'mdi:git'
+        name: ' '
+        service: automation.trigger
+        service_data:
+          entity_id: automation.git_commit
+        type: call-service
+    type: entities
+- type: 'custom:vertical-stack-in-card'
+cards:
+  - entities:
+      - entity: sensor.synology_cpu_load_total
+        name: CPU
+        show_state: true
+      - entity: sensor.synology_memory_usage_real
+        name: Memory
+        show_state: true
+    hours_to_show: 12
+    name: NAS Resources
+    points_per_hour: 4
+    refresh_interval: 900
+    type: 'custom:mini-graph-card'
+  - type: 'custom:bar-card'
+    entities:
+      - entity: sensor.synology_volume_used_volume_1
+        name: Disk Usage
+        positions:
+          icon: inside
+          name: inside
+        icon: 'mdi:harddisk'
+        severity:
+          - value: 50
+            color: '#40bf40'
+          - value: 80
+            color: '#ffde00'
+          - value: 100
+            color: '#bf4040'
+    height: 50px
+    style: |-
+      bar-card-value {
+        margin-right: 50%;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        text-shadow: 1px 1px #0005;
+      }
+      bar-card-name {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        text-shadow: 1px 1px #0005;
+      }
+      ha-icon {
+        color: white;
+        height: 34px;
+        width: 34px;
+      }
+      ha-card {
+        padding: 0px;
+      }
+      bar-card-current, bar-card-backgroundbar, bar-card-currentbar {
+        border-radius: 10px;
+      }
+  - type: entities
+    entities:
+      - entity: sensor.synology_status_smart_sda
+        name: Drive 1
+        icon: 'mdi:harddisk'
+      - entity: sensor.synology_status_smart_sdb
+        name: Drive 2
+        icon: 'mdi:harddisk'
+      - entity: sensor.synology_status_smart_sdc
+        name: Drive 3
+        icon: 'mdi:harddisk'
+      - entity: sensor.synology_status_smart_sdd
+        name: Drive 4
+        icon: 'mdi:harddisk'
+  - entities:
+      - entity: sensor.synology_network_up
+        name: Upload
+        show_state: true
+      - entity: sensor.synology_network_down
+        name: Down
+        show_state: true
+    hours_to_show: 12
+    upper_bound: 125000
+    name: NAS Network
+    icon: 'mdi:network'
+    points_per_hour: 4
+    refresh_interval: 900
+    type: 'custom:mini-graph-card'

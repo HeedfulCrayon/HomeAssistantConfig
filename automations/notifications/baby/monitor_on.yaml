@@ -1,0 +1,9 @@
+alias: 'Baby Monitor On'
+trigger:
+ platform: state
+ entity_id: input_boolean.baby_monitor
+ from: 'off'
+ to: 'on'
+action:
+ service: ffmpeg.start
+ entity_id: binary_sensor.ffmpeg_noise

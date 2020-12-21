@@ -1,0 +1,9 @@
+platform: mqtt
+name: "Nexus 7 Sound Detection"
+state_topic: 'fully/event/onMotion/nexus_7'
+device_class: sound
+off_delay: 10
+payload_on: 'on'
+payload_off: 'off'
+value_template: "{% if value_json.type == 'acoustic' and value_json.event == 'onMotion' %}on{% endif %}"
+qos: 1

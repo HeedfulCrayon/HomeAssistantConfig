@@ -1,0 +1,7 @@
+aspect_ratio: 0%
+camera_image: camera.bedroom_girls
+camera_view: live
+entities:
+  - entity: camera.bedroom_girls
+title: Girls Room
+type: picture-glance

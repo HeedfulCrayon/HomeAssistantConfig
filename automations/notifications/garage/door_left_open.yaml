@@ -1,0 +1,20 @@
+id: '1573339335936'
+alias: Garage door left open
+description: ''
+trigger:
+- entity_id: cover.garage_double_door
+  for: 00:10
+  from: closed
+  platform: state
+  to: open
+condition: []
+action:
+- data:
+    data:
+      actions:
+        - action: "close_garage"
+          title: "Close"
+      tag: garage_open
+    message: The garage door was left open for 10 minutes
+    title: Garage Double Door
+  service: notify.all_phones

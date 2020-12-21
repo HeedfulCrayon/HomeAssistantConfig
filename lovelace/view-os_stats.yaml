@@ -1,0 +1,43 @@
+path: os_stats
+# visible:
+#   - user: 473ab0cab7ab47148735971e8b4e1509
+badges:
+  - entity: sensor.hacs
+cards:
+  - entities:
+      - entity: sensor.processor_use
+        name: CPU
+      - entity: sensor.memory_use_percent
+        name: Memory
+      - entity: sensor.disk_use_percent
+        name: Disk
+    hours_to_show: 6
+    name: System Resources
+    points_per_hour: 12
+    refresh_interval: 10
+    type: 'custom:mini-graph-card'
+  - cards:
+      - cards:
+          - entity: sensor.external_download
+            max: 270
+            min: 0
+            severity:
+              green: 240
+              red: 0
+              yellow: 120
+            type: gauge
+            unit: mbps
+          - entity: sensor.external_upload
+            max: 150
+            min: 0
+            severity:
+              green: 115
+              red: 0
+              yellow: 75
+            type: gauge
+        type: horizontal-stack
+      - entities:
+          - entity: sensor.speedtest_ping
+            name: Ping
+        type: glance
+    type: vertical-stack

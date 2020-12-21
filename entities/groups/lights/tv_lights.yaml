@@ -1,0 +1,6 @@
+tv_lights:
+    name: TV Lights
+    icon: mdi:television
+    entities:
+      - light.tv_color
+      - light.tv_white

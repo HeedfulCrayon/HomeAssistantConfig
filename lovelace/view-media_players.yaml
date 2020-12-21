@@ -1,0 +1,54 @@
+path: media
+title: Media Players
+icon: 'mdi:television'
+badges: []
+cards:
+  - card:
+      title: Chromecasts
+      type: entities
+    filter:
+      include:
+        - attributes:
+            is_chromecast: true
+          domain: media_player
+          options:
+            artwork: cover
+            artwork_border: true
+            hide:
+              power: true
+            type: 'custom:mini-media-player'
+          state: playing
+        - attributes:
+            is_chromecast: true
+          domain: media_player
+          options:
+            artwork: cover
+            artwork_border: true
+            hide:
+              power: true
+            type: 'custom:mini-media-player'
+          state: paused
+        - attributes:
+            is_chromecast: true
+          domain: media_player
+          options:
+            artwork: cover
+            artwork_border: true
+            hide:
+              power: false
+            type: 'custom:mini-media-player'
+          state: 'off'
+        - attributes:
+            is_chromecast: true
+          domain: media_player
+          options:
+            artwork: cover
+            artwork_border: true
+            hide:
+              power: false
+            type: 'custom:mini-media-player'
+          state: idle
+    sort:
+      method: state
+      reverse: true
+    type: 'custom:auto-entities'

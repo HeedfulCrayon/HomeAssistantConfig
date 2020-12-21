@@ -1,0 +1,47 @@
+platform: template
+sensors:
+  nate_status:
+    value_template: >-
+      {% if is_state('sensor.discord_heedfulcrayon_6827','dnd') %}
+        Do Not Disturb
+      {% elif is_state('input_boolean.nate_on_a_call', 'on') %}
+        On a Call
+      {% elif state_attr('sensor.discord_heedfulcrayon_6827', 'game') == "Microsoft Teams Meeting" %}
+        Do Not Disturb
+      {% elif 
+          state_attr('sensor.discord_heedfulcrayon_6827', 'game') == "Vivaldi" or
+          state_attr('sensor.discord_heedfulcrayon_6827', 'game') == "Visual Studio Code" or
+          state_attr('sensor.discord_heedfulcrayon_6827', 'game') == "Microsoft Visual Studio" 
+      %}
+        Working
+      {% elif state_attr('sensor.discord_heedfulcrayon_6827', 'streaming') == true %}
+        Streaming
+      {% elif state_attr('sensor.discord_heedfulcrayon_6827', 'game') != None %}
+        Gaming
+      {% elif is_state('sensor.discord_heedfulcrayon_6827','online') %}
+        Available
+      {% else %}
+        Offline
+      {%- endif %}
+    icon_template: >-
+      {% if is_state('sensor.discord_heedfulcrayon_6827','dnd') %}
+        mdi:do-not-disturb
+      {% elif is_state('input_boolean.nate_on_a_call', 'on') %}
+        mdi:phone
+      {% elif state_attr('sensor.discord_heedfulcrayon_6827', 'game') == "Microsoft Teams Meeting" %}
+        mdi:do-not-disturb
+      {% elif 
+          state_attr('sensor.discord_heedfulcrayon_6827', 'game') == "Vivaldi" or
+          state_attr('sensor.discord_heedfulcrayon_6827', 'game') == "Visual Studio Code" or
+          state_attr('sensor.discord_heedfulcrayon_6827', 'game') == "Microsoft Visual Studio" 
+      %}
+        mdi:briefcase-edit
+      {% elif state_attr('sensor.discord_heedfulcrayon_6827', 'streaming') == true %}
+        mdi:account-tie-voice
+      {% elif state_attr('sensor.discord_heedfulcrayon_6827', 'game') != None %}
+        mdi:gamepad-variant
+      {% elif is_state('sensor.discord_heedfulcrayon_6827','online') %}
+        mdi:check-circle
+      {% else %}
+        mdi:mouse-off
+      {%- endif %}

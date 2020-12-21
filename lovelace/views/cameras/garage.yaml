@@ -1,0 +1,8 @@
+aspect_ratio: 0%
+camera_image: camera.garage
+entities:
+  - entity: camera.garage
+entity: camera.garage
+image: 'https://www.home-assistant.io/images/merchandise/shirt-frontpage.png'
+title: Garage Cam
+type: picture-glance

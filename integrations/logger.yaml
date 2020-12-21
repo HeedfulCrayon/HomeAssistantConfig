@@ -1,0 +1,11 @@
+logger:
+  default: warn
+  logs:
+    custom_components.samsungtv_tizen: debug
+
+
+# logger:
+#   default: debug
+#   logs:
+#     # log level for HA core
+#     homeassistant.core: debug

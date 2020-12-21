@@ -1,0 +1,7 @@
+platform: discord_game
+token: !secret discord_api_key
+image_format: webp            # optional, available formats are: png, webp, jpeg, jpg
+members:
+  - heedfulCrayon#6827
+  - Snaveevans#0897
+  - Foobucket#4529

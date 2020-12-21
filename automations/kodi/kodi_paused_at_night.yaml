@@ -1,0 +1,14 @@
+id: kodi_movie_paused_at_night
+alias: Kodi Movie Paused At Night
+description: ''
+trigger:
+- platform: state
+  entity_id: media_player.kodi
+  to: paused
+condition:
+- condition: sun
+  before: sunrise
+  after: sunset
+action:
+- scene: scene.movie_paused
+mode: single

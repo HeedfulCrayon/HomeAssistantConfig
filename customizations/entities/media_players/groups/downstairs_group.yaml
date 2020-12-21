@@ -1,0 +1,3 @@
+media_player.downstairs_group:
+  is_group: 'true'
+  is_smart_speaker: 'true'

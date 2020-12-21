@@ -1,0 +1,4 @@
+office_speaker_test_group:
+  name: office_speaker_test
+  entities:
+    - media_player.office_speaker

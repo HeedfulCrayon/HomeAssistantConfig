@@ -1,0 +1,41 @@
+type: horizontal-stack
+title: Living Room Environment
+cards:
+  - entities:
+      - entity: sensor.living_room_temp
+        name: Inside
+        color: '#E8DB7D'
+        show_fill: false
+        show_state: true
+      - entity: sensor.weather_temperature
+        name: Outside
+        color: '#558C8C'
+        show_fill: false
+        show_state: true
+    hours_to_show: 48
+    line_width: 8
+    upper_bound: 76
+    lower_bound: 66
+    name: Temperature
+    points_per_hour: 0.5
+    type: 'custom:mini-graph-card'
+  - entities:
+      - entity: sensor.living_room_humidity
+        name: Inside
+        color: '#4A6FA5'
+        show_fill: false
+        show_state: true
+      - entity: sensor.weather_humidity
+        name: Outside
+        color: '#C0D6DF'
+        show_fill: false
+        show_state: true
+    icon: mdi:water-percent
+    hours_to_show: 48
+    line_width: 8
+    upper_bound: 30
+    lower_bound: 15
+    name: Humidity
+    points_per_hour: 0.25
+    refresh_interval: 10
+    type: 'custom:mini-graph-card'

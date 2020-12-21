@@ -1,0 +1,16 @@
+id: 'kids_can_come_out'
+alias: Kids Can Come Out
+description: ''
+trigger: 
+    platform: time
+    at: "08:30:00"
+condition: []
+action:
+- data:
+    brightness: 10
+    rgb_color:
+      - 0
+      - 255
+      - 0
+    entity_id: light.kids_light
+  service: light.turn_on

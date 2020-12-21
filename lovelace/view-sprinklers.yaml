@@ -1,0 +1,16 @@
+path: sprinkler
+title: Sprinkler
+icon: 'mdi:sprinkler-variant'
+badges:
+  - entity: binary_sensor.sprinklers_online
+cards:
+  - entities:
+      - entity: switch.park_strip
+      - entity: switch.front_yard
+      - entity: switch.back_east_grass
+      - entity: switch.back_center_grass
+      - entity: switch.back_west_grass
+      - entity: switch.sloped_grass
+    show_header_toggle: false
+    title: Sprinklers
+    type: entities

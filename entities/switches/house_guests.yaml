@@ -1,0 +1,19 @@
+platform: template
+switches:
+  house_guests:
+    value_template: '{{ states.input_boolean.house_guests.state }}'
+    friendly_name: 'House Guests'
+    turn_on:
+      service: input_boolean.turn_on
+      data:
+            entity_id: input_boolean.house_guests
+    turn_off:
+      service: input_boolean.turn_off
+      data:
+            entity_id: input_boolean.house_guests
+    icon_template: >-
+          {% if is_state('input_boolean.house_guests', 'on') %}
+            mdi:account-group
+          {% else %}
+            mdi:account-group-outline
+          {% endif %}

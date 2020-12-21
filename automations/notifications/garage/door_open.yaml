@@ -1,0 +1,22 @@
+id: '1573339163903'
+alias: Garage door open notify
+description: ''
+trigger:
+- entity_id: cover.garage_double_door
+  from: closed
+  platform: state
+  to: open
+condition: []
+action:
+- data:
+    data:
+      actions:
+        - action: "close_garage"
+          title: "Close"
+      priority: high
+      ttl: 0
+      channel: Security
+      tag: garage_open
+    message: Your garage is open
+    title: Garage Double Door
+  service: notify.all_phones

@@ -1,0 +1,4 @@
+platform: ping
+host: !secret doorbell_ip
+name: Doorbell Connected
+count: 2

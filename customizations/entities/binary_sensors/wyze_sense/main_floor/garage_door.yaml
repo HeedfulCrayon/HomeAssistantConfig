@@ -1,0 +1,2 @@
+binary_sensor.wyzesense_garage_door:
+  sensor_brand: wyze

@@ -1,0 +1,6 @@
+office_devices:
+    name: Office Devices
+    entities:
+      - light.office_lamp
+      - light.streaming_light
+      - media_player.office_speaker

@@ -1,0 +1,7 @@
+bedroom_lights:
+    name: Bedroom Lights
+    icon: mdi:lightbulb-group
+    entities:
+      - light.nate_s_lamp
+      - light.joslyn_s_lamp
+      - switch.joslyn_desk_light

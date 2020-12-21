@@ -1,0 +1,3 @@
+# rachio:
+#   api_key: !secret rachio_key
+#   hass_url_override: input_text.base_url

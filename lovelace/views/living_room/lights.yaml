@@ -1,0 +1,16 @@
+cards:
+  - entities:
+      - entity: light.basket_lamp
+      - entity: light.chrome_lamp
+      - entity: light.home_lamp
+      - entity: switch.tree_lights
+    show_header_toggle: false
+    type: entities
+  - entities:
+      - entity: light.standing_lamp
+      - entity: light.tv_color
+      - entity: light.tv_white
+      - entity: switch.tree_star
+    show_header_toggle: false
+    type: entities
+type: horizontal-stack

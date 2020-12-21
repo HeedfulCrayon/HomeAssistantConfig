@@ -1,0 +1,10 @@
+platform: template
+sensors:
+  joslyn_today_chores:
+    friendly_name: Joslyn Chores
+    value_template: >
+        {{ state_attr("binary_sensor.grocy_overdue_chores","chores")|selectattr("next_execution_assigned_user.id","==",3)|list|count }}
+    icon_template: mdi:list-status
+    attribute_templates:
+      chores_list: >-
+        {{ state_attr("binary_sensor.grocy_overdue_chores","chores")|selectattr("next_execution_assigned_user.id","==",3)|map(attribute='name')|list }}

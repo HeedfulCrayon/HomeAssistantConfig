@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  external_download:
+    friendly_name: "Download Speed"
+    unit_of_measurement: 'mbps'
+    value_template: "{{ states('sensor.speedtest_download')|int }}"

@@ -1,0 +1,53 @@
+id: 'git_status_hook'
+alias: Git Status Hook
+description: 'Updates the git status'
+trigger:
+- platform: webhook
+  webhook_id: git_status
+action:
+  - service: input_select.set_options
+    data_template:
+      options: >
+        {% for x in trigger.json.delete %}
+          - "{{ x }}"
+        {% endfor %}
+      entity_id: input_select.git_deleted
+      # {% if loop.first %}
+      #       "{{ x }}",
+      #     {% elif loop.last %}
+      #       "{{ x }}"
+      #     {% else %}
+      #       "{{ x }}",
+      #     {% endif %}
+  # - service: input_select.set_options
+  #   data_template:
+  #     options: >
+  #       {{ trigger.json.added }}
+  #     entity_id: input_select.git_add
+  # - service: input_select.set_options
+  #   data_template:
+  #     options: >
+  #       {{ trigger.json.modify }}
+  #     entity_id: input_select.git_modified
+
+  # - service: input_text.set_value
+  #   data_template:
+  #     value: >
+  #       {% for x in trigger.json.delete %}
+  #         {{ x }}
+  #       {% endfor %}
+  #     entity_id: input_text.git_deleted
+  # - service: input_text.set_value
+  #   data_template:
+  #     value: >
+  #       {% for x in trigger.json.add %}
+  #         {{ x }}
+  #       {% endfor %}
+  #     entity_id: input_text.git_added
+  # - service: input_text.set_value
+  #   data_template:
+  #     value: >
+  #       {% for x in trigger.json.modify %}
+  #         {{ x }}
+  #       {% endfor %}
+  #     entity_id: input_text.git_modified

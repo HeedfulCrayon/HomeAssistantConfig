@@ -1,0 +1,12 @@
+id: 'turn_off_playroom_tv_when_idle'
+alias: Play Room TV Off
+description: ''
+trigger:
+- entity_id: media_player.playroom_tv
+  to: 'off'
+  platform: state
+condition: []
+action:
+- service: switch.turn_off
+  data:
+    entity_id: switch.power_strip_switch_2

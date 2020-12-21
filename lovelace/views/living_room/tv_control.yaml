@@ -1,0 +1,83 @@
+cards:
+  - artwork: cover
+    artwork_border: true
+    entity: media_player.shield_tv
+    group: false
+    hide:
+      controls: false
+      source: true
+      volume: true
+    icon: 'mdi:television'
+    type: 'custom:mini-media-player'
+  - artwork: cover
+    entity: media_player.kodi
+    group: false
+    hide:
+      controls: true
+      icon: true
+      name: true
+      power: true
+      volume: true
+    icon: 'mdi:kodi'
+    type: 'custom:mini-media-player'
+  - entity: media_player.samsung_tv
+    group: true
+    hide:
+      controls: true
+      icon: true
+      info: true
+      name: true
+      power: true
+      source: true
+      volume: true
+    icon: 'mdi:television'
+    shortcuts:
+      buttons:
+        - data:
+            entity_id: media_player.shield_tv
+            source: com.netflix.ninja
+          icon: 'mdi:netflix'
+          id: media_player.select_source
+          type: service
+        - data:
+            entity_id: media_player.shield_tv
+            source: org.xbmc.kodi
+          icon: 'mdi:kodi'
+          id: media_player.select_source
+          type: service
+        - data:
+            entity_id: media_player.shield_tv
+            source: com.disney.disneyplus
+          id: media_player.select_source
+          name: Disney+
+          type: service
+        - data:
+            entity_id: media_player.shield_tv
+            source: com.amazon.avod
+          icon: 'mdi:amazon'
+          id: media_player.select_source
+          type: service
+        - data:
+            entity_id: media_player.samsung_tv
+          icon: 'mdi:volume-plus'
+          id: media_player.volume_up
+          type: service
+        - data:
+            entity_id: media_player.samsung_tv
+          icon: 'mdi:power'
+          id: media_player.toggle
+          type: service
+        - data:
+            command: HOME
+            entity_id: media_player.shield_tv
+          icon: 'mdi:home'
+          id: androidtv.adb_command
+          type: service
+        - data:
+            entity_id: media_player.samsung_tv
+          icon: 'mdi:volume-minus'
+          id: media_player.volume_down
+          type: service
+      columns: 4
+    type: 'custom:mini-media-player'
+type: 'custom:vertical-stack-in-card'

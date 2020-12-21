@@ -1,0 +1,18 @@
+platform: template
+sensors:
+  lr_sw_window_connection:
+    friendly_name: Living Room SW Window Connection
+    value_template: >-
+      {{ states.binary_sensor.wyzesense_lr_sw_window.attributes.rssi }}
+    icon_template: >-
+      {%- if states.binary_sensor.wyzesense_lr_sw_window.attributes.rssi >= -50 %}
+      mdi:wifi-strength-4
+      {% elif states.binary_sensor.wyzesense_lr_sw_window.attributes.rssi >= -75 %}
+      mdi:wifi-strength-3
+      {% elif states.binary_sensor.wyzesense_lr_sw_window.attributes.rssi >= -100 %}
+      mdi:wifi-strength-2
+      {% else %}
+      mdi:wifi-strength-1
+      {% endif -%}
+    attribute_templates:
+      type: connectivity

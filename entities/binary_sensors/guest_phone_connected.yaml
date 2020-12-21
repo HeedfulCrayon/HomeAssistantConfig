@@ -1,0 +1,4 @@
+platform: ping
+host: !secret guest_phone_ip
+name: Guest Phone Connected
+count: 2

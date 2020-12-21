@@ -1,0 +1,17 @@
+id: '1585337099107'
+alias: Earthquake Notification
+description: ''
+trigger:
+- event: enter
+  platform: geo_location
+  source: usgs_earthquakes_feed
+  zone: zone.home
+condition: []
+action:
+- data:
+    data:
+      priority: high
+      ttl: 0
+    message: Earthquake nearby
+    title: Earthquake!
+  service: notify.mobile_app_nate_phone

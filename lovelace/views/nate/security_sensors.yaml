@@ -1,0 +1,102 @@
+entities:
+  - entities:
+      - entity: sensor.front_door_connection
+        icon: true
+        name: " "
+      - entity: sensor.front_door_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_front_door
+    type: 'custom:multiple-entity-row'
+  - entities:
+      - entity: sensor.garage_door_connection
+        icon: true
+        name: " "
+      - entity: sensor.garage_door_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_garage_door
+    type: 'custom:multiple-entity-row'
+  - entities:
+      - entity: sensor.sliding_door_connection
+        icon: true
+        name: " "
+      - entity: sensor.sliding_door_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_sliding_door
+    type: 'custom:multiple-entity-row'
+  - entities:
+      - entity: sensor.bathroom_window_connection
+        icon: true
+        name: " "
+      - entity: sensor.bathroom_window_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_bathroom_window
+    type: 'custom:multiple-entity-row'
+  - entities:
+      - entity: sensor.kitchen_window_connection
+        icon: true
+        name: " "
+      - entity: sensor.kitchen_window_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_kitchen_window
+    type: 'custom:multiple-entity-row'
+  - entities:
+      - entity: sensor.lr_n_window_connection
+        icon: true
+        name: " "
+      - entity: sensor.lr_n_window_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_lr_n_window
+    type: 'custom:multiple-entity-row'
+  - entities:
+      - entity: sensor.lr_nw_window_connection
+        icon: true
+        name: " "
+      - entity: sensor.lr_nw_window_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_lr_nw_window
+    type: 'custom:multiple-entity-row'
+  - entities:
+      - entity: sensor.lr_sw_window_connection
+        icon: true
+        name: " "
+      - entity: sensor.lr_sw_window_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_lr_sw_window
+    type: 'custom:multiple-entity-row'
+  - entities:
+      - entity: sensor.basement_w_window_connection
+        icon: true
+        name: " "
+      - entity: sensor.basement_w_window_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_basement_w_window
+    type: 'custom:multiple-entity-row'
+  - entities:
+      - entity: sensor.basement_e_window_connection
+        icon: true
+        name: " "
+      - entity: sensor.basement_e_window_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_basement_e_window
+    type: 'custom:multiple-entity-row'
+  - entities:
+      - entity: sensor.motion_connection
+        icon: true
+        name: " "
+      - entity: sensor.motion_battery
+        icon: true
+        name: " "
+    entity: binary_sensor.wyzesense_motion
+    type: 'custom:multiple-entity-row'
+type: entities
+title: Security Sensors

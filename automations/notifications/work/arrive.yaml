@@ -1,0 +1,18 @@
+id: '1576527182930'
+alias: notify when I arrive at work
+description: ''
+trigger:
+- entity_id: person.nate
+  event: enter
+  platform: zone
+  zone: zone.work
+condition: []
+action:
+- data:
+    message: He has arrived at work
+    title: Nate is safe!
+  service: notify.mobile_app_nate_phone
+- data:
+    message: He has arrived at work
+    title: Nate is safe!
+  service: notify.mobile_app_joslyn_phone

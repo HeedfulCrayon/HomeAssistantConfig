@@ -1,0 +1,33 @@
+id: 'doorbell_ring'
+alias: Doorbell Ring
+description: 'When the doorbell button is pressed'
+trigger:
+- platform: webhook
+  webhook_id: test_webhook
+mode: single
+action:
+  - data:
+      filename: /config/www/snapshots/front_door_bell.jpg
+    entity_id: camera.door_bell
+    service: camera.snapshot
+  - data: {}
+    entity_id: 
+      - automation.doorbell_phones
+      - automation.doorbell_tvs
+      - automation.doorbell_speakers
+      - automation.doorbell_displays
+    service: automation.trigger
+#   - data: {}
+#     entity_id: automation.doorbell_phones
+#     service: automation.trigger
+#   - data: {}
+#     entity_id: automation.doorbell_tvs
+#     service: automation.trigger
+#   - data: {}
+#     entity_id: automation.doorbell_speakers
+#     service: automation.trigger
+#   - data: {}
+#     entity_id: automation.doorbell_displays
+#     service: automation.trigger
+  - delay:
+      seconds: 5

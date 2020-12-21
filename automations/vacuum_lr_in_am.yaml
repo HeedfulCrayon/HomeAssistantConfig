@@ -1,0 +1,12 @@
+id: 'vacuum_lr_in_am'
+alias: Vacuum living room in morning
+description: 'Vacuum living room at 6 AM'
+trigger:
+    platform: time
+    at: "06:00:00"
+action:
+- service: xiaomi_miio.vacuum_clean_zone
+  data:
+    entity_id: vacuum.xiaomi_vacuum_cleaner
+    repeats: 2
+    zone: [[25100, 27300, 31305, 22250]]

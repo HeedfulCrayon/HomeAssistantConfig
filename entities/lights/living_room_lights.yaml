@@ -1,0 +1,9 @@
+platform: group
+name: Living Room Lights
+entities:
+  - light.basket_lamp
+  - light.chrome_lamp
+  - light.home_lamp
+  - light.standing_lamp
+  - light.tv_color
+  - light.tv_white

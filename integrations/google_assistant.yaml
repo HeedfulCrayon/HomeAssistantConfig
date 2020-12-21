@@ -1,0 +1,55 @@
+google_assistant:
+  project_id: !secret project_id
+  service_account: !include ../Service_Account.json
+  report_state: true
+  expose_by_default: false
+  secure_devices_pin: !secret security_pin
+  entity_config:
+    cover.garage_double_door:
+      name: 'Garage Door'
+      room: 'Garage'
+      expose: true
+    media_player.kodi:
+      name: kodi
+      room: 'Living Room'
+      expose: true
+    light.kids_light:
+      name: 'Kids Light'
+      room: 'Bedroom'
+      expose: true
+    switch.entry_garland:
+      name: 'Entry Garland'
+      room: 'Entry'
+      expose: true
+    switch.joslyn_desk_light:
+      name: 'Desk Light'
+      room: 'Master Bedroom'
+      expose: true
+    scene.kids_can_come_out:
+      name: 'Kids can come out'
+      room: 'Bedroom'
+      expose: true
+    scene.kids_in_bed:
+      name: 'Time to get in bed'
+      room: 'Bedroom'
+      expose: true
+    scene.kids_quiet:
+      name: 'Kids quiet time'
+      room: 'Bedroom'
+      expose: true
+    scene.kids_get_ready_for_bed:
+      name: 'Get ready for bed'
+      room: 'Bedroom'
+      expose: true
+    scene.movie:
+      name: 'Movie Time'
+      room: 'Living Room'
+      expose: true
+    scene.movie_scary:
+      name: 'Scary Movie Time'
+      room: 'Living Room'
+      expose: true
+    group.christmas_tree_lights:
+      name: 'Christmas Tree'
+      room: 'Living Room'
+      expose: true

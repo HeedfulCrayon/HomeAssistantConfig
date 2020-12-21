@@ -1,0 +1,10 @@
+platform: template
+sensors:
+  motion_battery:
+    friendly_name: Motion Battery
+    unit_of_measurement: '%'
+    value_template: >-
+      {{ states.binary_sensor.wyzesense_motion.attributes.battery_level }}
+    icon_template: mdi:battery-{{ (states.binary_sensor.wyzesense_motion.attributes.battery_level / 10) | int | multiply(10) | int }}
+    attribute_templates:
+      type: battery

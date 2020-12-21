@@ -1,0 +1,31 @@
+id: 'sensor_open_after_sunset'
+alias: Sensor Open notify after sunset
+description: ''
+trigger:
+- platform: state
+  entity_id: 
+    - binary_sensor.wyzesense_basement_w_window
+    - binary_sensor.wyzesense_basement_e_window
+    - binary_sensor.wyzesense_bathroom_window
+    - binary_sensor.wyzesense_front_door
+    - binary_sensor.wyzesense_garage_door
+    - binary_sensor.wyzesense_kitchen_window
+    - binary_sensor.wyzesense_lr_nw_window
+    - binary_sensor.wyzesense_lr_sw_window
+    - binary_sensor.wyzesense_sliding_door
+  from: 'off'
+  to: 'on'
+condition: 
+- condition: state
+  entity_id: sun.sun
+  state: 'below_horizon'
+action:
+- data_template:
+    message: "{{ trigger.from_state.attributes.friendly_name }} was opened at {{ now().strftime('%-I:%M %A') }}"
+    title: Security
+    data:
+      ttl: 0
+      priority: high
+      tag: "{{ trigger.from_state.entity_id }}"
+      channel: Security
+  service_template: notify.all_phones

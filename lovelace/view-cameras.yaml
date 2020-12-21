@@ -1,0 +1,8 @@
+path: cameras
+title: Cameras
+icon: 'mdi:camera'
+badges: []
+cards:
+  - !include views/cameras/garage.yaml
+  - !include views/cameras/girls_bedroom.yaml
+  - !include views/cameras/doorbell.yaml

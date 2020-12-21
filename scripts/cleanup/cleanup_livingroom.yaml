@@ -1,0 +1,5 @@
+'cleanup_livingroom':
+    alias: cleanup_livingroom
+    sequence:
+        - entity_id: timer.clean_livingroom
+          service: timer.start

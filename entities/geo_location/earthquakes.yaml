@@ -1,0 +1,3 @@
+platform: usgs_earthquakes_feed
+feed_type: 'past_hour_m25_earthquakes'
+radius: 100

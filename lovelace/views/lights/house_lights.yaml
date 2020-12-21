@@ -1,0 +1,21 @@
+cards:
+  - entities:
+      - entity: light.front_lights
+      - type: custom:fold-entity-row
+        head: group.living_room_lights
+      - type: custom:fold-entity-row
+        head: group.office_lights
+      - type: custom:fold-entity-row
+        head: group.bedroom_lights
+      - type: custom:fold-entity-row
+        head: group.tv_lights
+      - type: custom:fold-entity-row
+        head: group.entry_lights
+      - type: custom:fold-entity-row
+        head: group.christmas_tree_lights
+      - type: custom:fold-entity-row
+        head: group.nursery_lights
+    show_header_toggle: false
+    type: entities
+title: Lights
+type: horizontal-stack

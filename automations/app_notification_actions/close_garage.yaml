@@ -1,0 +1,9 @@
+alias: Sound the alarm
+trigger:
+  platform: event
+  event_type: mobile_app_notification_action
+  event_data:
+    action: close_garage
+action:
+  - service: cover.close_cover
+    entity_id: cover.garage_double_door

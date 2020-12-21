@@ -1,0 +1,2 @@
+base_url:
+  initial: !secret base_url

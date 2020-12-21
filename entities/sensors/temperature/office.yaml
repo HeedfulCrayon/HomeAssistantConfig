@@ -1,0 +1,5 @@
+platform: mqtt
+name: Office Temp
+state_topic: "homeassistant/tele/Office/SENSOR"
+unit_of_measurement: "F"
+value_template: "{{ value_json.DHT11.Temperature }}"

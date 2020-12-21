@@ -1,0 +1,22 @@
+lovelace-os-statistics:
+  mode: yaml
+  filename: ui-dashboard-os_statistics.yaml
+  title: OS Stats
+  icon: mdi:cpu-64-bit
+  show_in_sidebar: true
+  require_admin: true
+  
+lovelace-security-panel:
+  mode: yaml
+  filename: ui-dashboard-security-panel.yaml
+  title: Security Panel
+  show_in_sidebar: true
+  require_admin: true
+  
+joslyn-panel:
+  mode: yaml
+  filename: ui-joslyn-panel.yaml
+  title: Joslyn Panel
+  icon: mdi:human-female
+  show_in_sidebar: true
+  require_admin: false

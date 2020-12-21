@@ -1,0 +1,16 @@
+id: 'kids_quiet_in_room'
+alias: Kids Quiet In Room
+description: ''
+trigger: 
+    platform: time
+    at: "07:30:00"
+condition: []
+action:
+- data:
+    brightness: 10
+    rgb_color:
+      - 255
+      - 165
+      - 0
+    entity_id: light.kids_light
+  service: light.turn_on

@@ -1,0 +1,71 @@
+platform: xiaomi_cloud_map_extractor
+host: !secret vacuum_ip
+token: !secret xiaomi_token
+username: !secret xiaomi_user
+password: !secret xiaomi_password
+colors:
+  color_map_inside: [255, 255, 255, 64]
+  color_map_outside: [0, 0, 0]
+  color_map_wall: [255, 255, 255, 0]
+  color_map_wall_v2: [255, 255, 255]
+  color_grey_wall: [255, 255, 255, 0]
+  color_path: [147, 194, 238]
+  color_goto_path: [0, 255, 0]
+  color_predicted_path: [255, 255, 0, 0]
+  color_zones: [0xAD, 0xD8, 0xFF, 0x8F]
+  color_zones_outline: [0xAD, 0xD8, 0xFF]
+  color_virtual_walls: [255, 33, 55, 127]
+  color_no_go_zones: [255, 33, 55, 127]
+  color_no_go_zones_outline: [255, 33, 55, 127]
+  color_no_mop_zones: [163, 130, 211, 127]
+  color_no_mop_zones_outline: [163, 130, 211]
+  color_charger: [0x66, 0xfe, 0xda, 0x7f]
+  color_robo: [75, 235, 149]
+  color_unknown: [0, 0, 0]
+  color_scan: [255, 255, 255, 15]
+draw:
+  - charger
+  - path
+  - goto_path
+  - predicted_path
+  - no_go_zones
+  - no_mopping_zones
+  - vacuum_position
+  - virtual_walls
+  # - zones
+room_colors:
+      # 16: [255, 255, 255, 0]
+      # 17: [255, 255, 255, 0]
+      # 18: [255, 255, 255, 0]
+      # 19: [255, 255, 255, 0]
+      # 21: [255, 255, 255, 0]
+      16: [255, 255, 0, 15]
+      17: [255, 87, 0, 15]
+      18: [217, 136, 128, 15]
+      19: [52, 152, 219, 15]
+      21: [52, 152, 219, 15]
+map_transformation:
+  trim:
+    top: 25
+    bottom: 27
+    left: 22
+    right: 20
+attributes:
+  - calibration_points
+  - charger
+  - goto
+  - goto_path
+  - goto_predicted_path
+  - image
+  - is_empty
+  - map_name
+  - no_go_areas
+  - no_mopping_areas
+  - obstacles
+  - path
+  - room_numbers
+  - rooms
+  - vacuum_position
+  - vacuum_room
+  - walls
+  - zones

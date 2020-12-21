@@ -1,0 +1,10 @@
+platform: template
+sensors:
+  nate_today_chores:
+    friendly_name: Nate Chores
+    value_template: >
+        {{ state_attr("binary_sensor.grocy_overdue_chores","chores")|selectattr("next_execution_assigned_user.id","==",2)|list|count }}
+    icon_template: mdi:list-status
+    attribute_templates:
+      chores_list: >-
+        {{ state_attr("binary_sensor.grocy_overdue_chores","chores")|selectattr("next_execution_assigned_user.id","==",2)|map(attribute='name')|list }}

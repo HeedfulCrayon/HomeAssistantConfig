@@ -1,0 +1,6 @@
+entity: sensor.grocy_chores
+show_days: 2
+title: Joslyn Chores
+type: 'custom:grocy-chores-card'
+user_id: 3
+filter_user: 3

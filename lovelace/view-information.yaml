@@ -1,0 +1,15 @@
+path: information
+title: Information
+icon: 'mdi:information'
+badges: []
+cards:
+  - card:
+      title: Recent Earthquakes Nearby
+      type: entities
+    filter:
+      include:
+        - domain: geo_location
+    show_empty: false
+    type: 'custom:auto-entities'
+  - entity: weather.openweathermap
+    type: weather-forecast

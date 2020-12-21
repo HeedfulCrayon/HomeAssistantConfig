@@ -1,0 +1,22 @@
+name: Movie Paused
+icon: 'mdi:movie'
+entities:
+  light.home_lamp:
+    state: on
+    brightness: 1
+  light.chrome_lamp:
+    state: on
+    brightness: 1
+  light.basket_lamp:
+    state: on
+    brightness: 1
+  light.standing_lamp:
+    state: on
+    brightness: 1
+  light.tv_white:
+    state: on
+    brightness: 15
+  light.tv_color:
+    state: on
+    rgb_color: [255, 170, 0] #Orange
+    brightness: 100

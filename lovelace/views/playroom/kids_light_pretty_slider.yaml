@@ -1,0 +1,46 @@
+type: entities
+show_header_toggle: false
+entities:
+  - type: 'custom:slider-entity-row'
+    entity: light.kids_light
+    toggle: true
+    icon: 'mdi:lightbulb'
+  - type: 'custom:rgb-light-card'
+    entity: light.kids_light
+    justify: between
+    size: 40
+    colors:
+      - type: call-service
+        service: scene.turn_on
+        service_data:
+          entity_id: scene.kids_quiet
+        icon_color: 'linear-gradient(315deg, #ffe900, #fffbd6)'
+      - type: call-service
+        service: scene.turn_on
+        service_data:
+          entity_id: scene.kids_in_bed
+        icon_color: 'linear-gradient(0deg, #ff3224, #850901)'
+      - type: call-service
+        service: scene.turn_on
+        service_data:
+          entity_id: scene.kids_get_ready_for_bed
+        icon_color: 'linear-gradient(45deg, #dabbfa, #a755fa)'
+      - type: call-service
+        service: scene.turn_on
+        service_data:
+          entity_id: scene.kids_can_come_out
+        icon_color: 'linear-gradient(90deg, #36ff46, #008c0b)'
+      - type: call-service
+        service: light.turn_on
+        service_data:
+          entity_id: light.kids_light
+          effect: Pensieve
+          brightness_pct: 100
+          transition: 5
+        icon_color: 'linear-gradient(135deg, #00bbff, #5bff4f)'
+      - type: call-service
+        service: light.turn_off
+        service_data:
+          entity_id: light.kids_light
+          transition: 5
+        icon_color: 'radial-gradient(#454545, #000000)'

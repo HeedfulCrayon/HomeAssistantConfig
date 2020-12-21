@@ -1,0 +1,6 @@
+platform: mqtt
+state_topic: "fully/deviceInfo/nexus_7"
+device_class: battery
+name: nexus_7
+value_template: "{{ value_json.batteryLevel }}"
+json_attributes_topic: fully/deviceInfo/nexus_7

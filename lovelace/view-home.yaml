@@ -1,0 +1,34 @@
+path: home
+title: Home
+icon: mdi:home
+badges:
+  - entity: binary_sensor.updater
+  - entity: binary_sensor.doorbell_connected
+  - entity: sensor.someone_home
+    style: |
+      :host {
+        --label-badge-red: 
+          {% if states(config.entity) == "true" %}
+          teal;
+          {% else %}
+          red;
+          {% endif %}
+        }
+  - entity: sun.sun
+cards:
+  - type: entities
+    entities:
+      - !include views/people/nate.yaml
+      - !include views/people/joslyn.yaml
+    show_header_toggle: false
+  - !include views/dynamic/lights_and_sensors_on.yaml
+  - cards:
+      - entities:
+          - entity: cover.garage_double_door
+        title: Garage Door
+        type: entities
+      - !include views/lights/house_lights.yaml
+    type: 'custom:vertical-stack-in-card'
+  - entities: 
+      - entity: switch.house_guests
+    type: entities

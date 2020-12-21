@@ -1,0 +1,6 @@
+entities:
+  - entity: sensor.joslyn_phone_battery_level
+    name: " "
+    icon: true
+entity: person.joslyn
+type: 'custom:multiple-entity-row'

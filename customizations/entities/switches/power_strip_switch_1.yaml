@@ -1,0 +1,4 @@
+switch.power_strip_switch_1:
+  friendly_name: Playroom Chromecast
+  stay_on: true
+  icon: mdi:cast

@@ -1,0 +1,7 @@
+platform: template
+sensors:
+  home_safe:
+    friendly_name: Home Safe
+    device_class: safety
+    value_template: >-
+      {% if states("group.doors") == "off" and states("group.windows") == "off" and states("group.motion") == "off" and states("group.garages") == "closed" %}Off{% else %}On{% endif %}

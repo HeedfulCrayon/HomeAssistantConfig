@@ -1,0 +1,13 @@
+path: playroom
+title: Playroom
+icon: 'mdi:toy-brick'
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+      - !include views/playroom/power_strip.yaml
+      - !include views/playroom/media_players.yaml
+      - !include views/playroom/kids_light_presets.yaml
+      - !include views/playroom/kids_light_pretty_slider.yaml
+  - !include views/cameras/girls_bedroom.yaml
+

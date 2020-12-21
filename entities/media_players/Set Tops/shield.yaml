@@ -1,0 +1,27 @@
+platform: androidtv
+name: Shield
+host: !secret shield_ip
+exclude_unnamed_apps: true
+apps:
+  com.disney.disneyplus: "Disney+"
+  com.amazon.amazonvideo.livingroom: "Amazon Prime"
+  org.xbmc.kodi: "Kodi"
+state_detection_rules:
+    'com.netflix.ninja':
+      - 'media_session_state'
+      - 'playing':
+          'wake_lock_size': 2
+      - 'paused':
+          'wake_lock_size': 1
+      - 'standby'
+    'org.xbmc.kodi':
+      - 'media_session_state'
+      - 'playing':
+          'wake_lock_size': 3
+      - 'paused':
+          'wake_lock_size': 2
+      - 'standby'
+    'com.android.tv.settings':
+      - 'standby'
+    'com.google.android.tvlauncher':
+      - 'standby'

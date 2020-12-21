@@ -1,0 +1,3 @@
+# samsungtv:
+#   - host: !secret samsung_tv_ip
+#     name: Samsung TV

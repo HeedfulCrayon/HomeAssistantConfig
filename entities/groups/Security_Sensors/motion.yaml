@@ -1,0 +1,4 @@
+motion:
+    name: Motion
+    entities:
+      - binary_sensor.wyzesense_motion

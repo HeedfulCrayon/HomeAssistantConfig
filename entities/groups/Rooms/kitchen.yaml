@@ -1,0 +1,5 @@
+kitchen_devices:
+    name: Kitchen Devices
+    entities:
+      - media_player.kitchen_display
+      - vacuum.xiaomi_vacuum_cleaner

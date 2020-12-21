@@ -1,0 +1,17 @@
+id: 'turn_on_bedroom_lights_at_night_when_not_watching_tv'
+alias: Bedroom Lights On when TV and LR Lights Off at Night
+description: 'Turn on bedroom lights in evening if TV is not on and phones are not charging'
+trigger:
+  platform: template
+  value_template: "{% if is_state('light.living_room_lights', 'off') and (is_state('sensor.nate_phone_battery_state', 'discharging') or is_state('sensor.joslyn_phone_battery_state', 'discharging')) %}true{% endif %}"
+condition: 
+    - condition: time
+      after: '21:30:00'
+      before: '01:25:00'
+action:
+- service: light.turn_on
+  data:
+    entity_id: light.bedroom_lights
+    brightness_pct: 10
+- delay: 
+    hours: 8

@@ -1,0 +1,7 @@
+bedroom_devices:
+    name: Bedroom Devices
+    entities:
+      - light.nate_s_lamp
+      - light.joslyn_s_lamp
+      - media_player.bedroom
+      - switch.joslyn_desk_light

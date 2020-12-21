@@ -1,0 +1,21 @@
+alias: 'Sensor Open While Armed Away'
+trigger:
+  - platform: state
+    entity_id: group.doors
+    to: 'on'
+  - platform: state
+    entity_id: group.windows
+    to: 'on'
+  - platform: state
+    entity_id: group.garages
+    to: 'on'
+  - platform: state
+    entity_id: group.motion
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: armed_away
+action:
+  service: alarm_control_panel.alarm_trigger
+  entity_id: alarm_control_panel.ha_alarm

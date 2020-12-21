@@ -1,0 +1,7 @@
+aspect_ratio: 0%
+camera_image: camera.door_bell
+camera_view: live
+entities:
+  - entity: camera.door_bell
+image: 'https://www.home-assistant.io/images/merchandise/shirt-frontpage.png'
+type: picture-glance

@@ -1,0 +1,5 @@
+name: all_phones
+platform: group
+services:
+  - service: mobile_app_nate_phone
+  - service: mobile_app_joslyn_phone

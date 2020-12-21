@@ -1,0 +1,6 @@
+nursery_lights:
+    name: Nursery Lights
+    icon: mdi:lightbulb-group
+    entities:
+      - light.nursery_light
+      - switch.nursery_lamp

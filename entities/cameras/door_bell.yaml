@@ -1,0 +1,3 @@
+platform: ffmpeg
+input: !secret door_bell_rtsp_camera_url
+name: door_bell

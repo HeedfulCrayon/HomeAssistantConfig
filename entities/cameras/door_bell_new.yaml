@@ -1,0 +1,4 @@
+# platform: vivotek
+# ip_address: !secret doorbell_ip
+# username: !secret doorbell_user
+# password: !secret doorbell_password

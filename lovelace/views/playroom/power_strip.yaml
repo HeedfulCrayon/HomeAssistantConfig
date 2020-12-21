@@ -1,0 +1,36 @@
+type: horizontal-stack
+cards:
+  - type: button
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    show_icon: true
+    show_name: true
+    entity: switch.power_strip_switch_1
+    name: Chromecast
+  - type: button
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+    show_icon: true
+    show_name: true
+    entity: switch.power_strip_switch_2
+    name: TV
+  - type: button
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+    show_icon: true
+    show_name: true
+    entity: switch.power_strip_switch_3
+  - type: button
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+    show_icon: true
+    show_name: true
+    entity: switch.power_strip_switch_4

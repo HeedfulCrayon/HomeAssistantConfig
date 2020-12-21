@@ -1,0 +1,16 @@
+type: vertical-stack
+cards:
+  - type: glance
+    entities:
+      - entity: sensor.average_sensor_battery
+      - entity: sensor.average_sensor_rssi
+    show_icon: false
+    show_state: true
+    show_name: true
+  - type: glance
+    entities:
+      - entity: sensor.minimum_sensor_battery
+      - entity: sensor.minimum_sensor_rssi
+    show_icon: false
+    show_state: true
+    show_name: true

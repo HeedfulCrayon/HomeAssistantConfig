@@ -1,0 +1,8 @@
+entities:
+  - entity: sensor.nate_status
+    name: " "
+  - entity: sensor.nate_phone_battery_level
+    name: " "
+    icon: true
+entity: person.nate
+type: 'custom:multiple-entity-row'

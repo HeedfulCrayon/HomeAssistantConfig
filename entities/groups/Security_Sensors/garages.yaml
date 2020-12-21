@@ -1,0 +1,4 @@
+garages:
+    name: Garages
+    entities:
+      - cover.garage_double_door

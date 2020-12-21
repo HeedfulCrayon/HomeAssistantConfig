@@ -1,0 +1,5 @@
+platform: mqtt
+name: Office Humidity
+state_topic: "homeassistant/tele/Office/SENSOR"
+unit_of_measurement: "%"
+value_template: "{{ value_json.DHT11.Humidity }}"
