@@ -1,0 +1,1 @@
+test: . /config/shell_scripts/test.sh "my input text"
