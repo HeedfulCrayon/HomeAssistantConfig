@@ -14,7 +14,7 @@
   type: module
 - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
   type: module
-- url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js
+- url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js?v=0.3.2
   type: module
 - url: /hacsfiles/bar-card/bar-card.js
   type: module

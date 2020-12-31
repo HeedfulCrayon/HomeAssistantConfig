@@ -1,0 +1,21 @@
+alias: Set Joslyn in Bed
+trigger:
+  - platform: event
+    event_type: tag_scanned
+    event_data:
+      device_id: 5339abdf4da2e970
+      tag_id: goodnight_tag
+  - platform: state
+    entity_id: binary_sensor.joslyn_phone_is_charging
+    from: 'on'
+    to: 'off'
+condition:
+  condition: or
+  conditions:
+    # Only changes when phone is unplugged in the morning
+    - "{{ trigger.platform == 'state' and is_state('input_boolean.joslyn_in_bed','on') }}"
+    - "{{ trigger.platform == 'event' }}"
+action:
+  - service: input_boolean.toggle
+    data:
+      entity_id: input_boolean.joslyn_in_bed

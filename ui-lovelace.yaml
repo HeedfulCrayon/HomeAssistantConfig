@@ -3,6 +3,7 @@ views:
   - !include lovelace/view-home.yaml
   - !include lovelace/view-living_room.yaml
   - !include lovelace/view-master_bedroom.yaml
+  - !include lovelace/view-vacuum.yaml
   - !include lovelace/view-playroom.yaml
   - !include lovelace/view-information.yaml
   - !include lovelace/view-speakers.yaml

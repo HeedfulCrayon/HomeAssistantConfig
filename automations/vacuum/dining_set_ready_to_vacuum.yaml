@@ -1,0 +1,10 @@
+alias: Set Dining Ready to Vacuum
+trigger:
+  platform: event
+  event_type: tag_scanned
+  event_data:
+    tag_id: dining_tag
+action:
+  service: input_boolean.turn_on
+  data:
+    entity_id: input_boolean.dining_ready_to_vacuum

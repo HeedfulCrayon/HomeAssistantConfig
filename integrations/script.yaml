@@ -5,6 +5,6 @@
 #
 # https://www.home-assistant.io/integrations/script/
 #
-script: ~
+# script: ~
 # script: !include ../scripts.yaml
-# script: split: !include_dir_list ../scripts
+script: !include_dir_named ../scripts

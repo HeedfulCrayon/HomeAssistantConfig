@@ -1,0 +1,30 @@
+type: 'custom:xiaomi-vacuum-map-card'
+entity: vacuum.xiaomi_vacuum_cleaner
+map_camera: camera.xiaomi_cloud_map_extractor
+camera_calibration: true
+zones:
+  # Entry (Room 16)
+  - - - 20398 # Left
+      - 26000 # Bottom
+      - 25100 # Right
+      - 23790 # Top
+  # 1Entry Wood (Room 17)
+  - - - 19550 # Left
+      - 23900 # Bottom
+      - 20400 # Right
+      - 25850 # Top
+  # Kitchen (Room 18)
+  - - - 25200 # Left
+      - 18400 # Bottom
+      - 28650 # Right
+      - 22100 # Top
+  # Dining (Room 19)
+  - - - 28700 # Left
+      - 18550 # Bottom
+      - 30950 # Right
+      - 22100 # Top
+  # Living Room (Room 21)
+  - - - 25100 # Left
+      - 22250 # Bottom
+      - 30950 # Right
+      - 27050 # Top

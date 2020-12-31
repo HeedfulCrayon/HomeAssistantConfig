@@ -1,0 +1,29 @@
+id: start_deebot_vacuum
+alias: Deebot Vacuum Start
+trigger:
+  - platform: state
+    entity_id: input_boolean.vacuum_upstairs
+mode: single
+action:
+  - choose:
+      # Turned On
+      - conditions: >
+          {{ trigger.to_state.state == 'on' }}
+        sequence:
+        - service: vacuum.turn_on
+          data: {}
+          entity_id: vacuum.deebot
+        - delay:
+            seconds: 1
+        - service: vacuum.set_fan_speed
+          data: {
+              fan_speed: 'high'
+          }
+          entity_id: vacuum.deebot
+      # Turned Off
+      - conditions: >
+          {{ trigger.to_state.state == 'off' }}
+        sequence:
+        - service: vacuum.return_to_base
+          data: {}
+          entity_id: vacuum.deebot

@@ -1,0 +1,10 @@
+alias: Set Living Room Ready to Vacuum
+trigger:
+  platform: event
+  event_type: tag_scanned
+  event_data:
+    tag_id: living_room_tag
+action:
+  service: input_boolean.turn_on
+  data:
+    entity_id: input_boolean.living_room_ready_to_vacuum

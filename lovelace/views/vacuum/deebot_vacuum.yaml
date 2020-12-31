@@ -1,0 +1,11 @@
+entity: vacuum.deebot
+image: default
+show_name: true
+show_toolbar: true
+actions:
+  - name: Clean Upstairs
+    service: input_boolean.toggle
+    service_data:
+      entity_id: input_boolean.vacuum_upstairs
+    icon: 'mdi:play'
+type: 'custom:vacuum-card'

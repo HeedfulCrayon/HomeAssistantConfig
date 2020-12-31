@@ -17,17 +17,5 @@ action:
       - automation.doorbell_speakers
       - automation.doorbell_displays
     service: automation.trigger
-#   - data: {}
-#     entity_id: automation.doorbell_phones
-#     service: automation.trigger
-#   - data: {}
-#     entity_id: automation.doorbell_tvs
-#     service: automation.trigger
-#   - data: {}
-#     entity_id: automation.doorbell_speakers
-#     service: automation.trigger
-#   - data: {}
-#     entity_id: automation.doorbell_displays
-#     service: automation.trigger
   - delay:
       seconds: 5

@@ -12,8 +12,11 @@ language: 'en'
 cache: true
 
 # Path to a location for caching the tts files.
-cache_dir: /tmp/tts
+cache_dir: /tts
 
 # Time to hold (in seconds) the voice data inside memory for fast play
 # on a media player. (min 60, max 57600)
 time_memory: 300
+
+base_url: !secret base_url
+service_name: google_say

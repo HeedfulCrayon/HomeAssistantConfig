@@ -8,15 +8,19 @@ trigger:
     to: stop
 mode: single
 action:
+  - delay: 00:00:01
   - choose:
       # If switch on and battery greater than 30
       - conditions: >
-          {{ is_state('input_boolean.vacuum_upstairs', 'on') and states.vacuum.deebot.attributes.battery_level  > 30 }}
+          {{ is_state('input_boolean.vacuum_upstairs', 'on') and 
+            state_attr('vacuum.deebot','battery_level') > 30 and
+            state_attr('vacuum.deebot','status') != "returning" }}
         sequence:
         - service: vacuum.turn_on
           data: {}
           entity_id: vacuum.deebot
-        - delay: 00:00:05
+        - delay:
+            seconds: 1
         - service: vacuum.set_fan_speed
           data: {
               fan_speed: 'high'
@@ -24,7 +28,9 @@ action:
           entity_id: vacuum.deebot
       # If switch is on and battery less than 30
       - conditions: >
-          {{ is_state('input_boolean.vacuum_upstairs', 'on') and states.vacuum.deebot.attributes.battery_level  < 30 }}
+          {{ state_attr('vacuum.deebot','status') == "returning" or
+            (is_state('input_boolean.vacuum_upstairs', 'on') and 
+            state_attr('vacuum.deebot','battery_level') < 30) }}
         sequence:
         - service: vacuum.turn_off
           data: {}

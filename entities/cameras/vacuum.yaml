@@ -4,7 +4,8 @@ token: !secret xiaomi_token
 username: !secret xiaomi_user
 password: !secret xiaomi_password
 colors:
-  color_map_inside: [255, 255, 255, 64]
+  # color_map_inside: [255, 255, 255, 64]
+  color_map_inside: [70, 70, 70, 0]
   color_map_outside: [0, 0, 0]
   color_map_wall: [255, 255, 255, 0]
   color_map_wall_v2: [255, 255, 255]
@@ -34,11 +35,6 @@ draw:
   - virtual_walls
   # - zones
 room_colors:
-      # 16: [255, 255, 255, 0]
-      # 17: [255, 255, 255, 0]
-      # 18: [255, 255, 255, 0]
-      # 19: [255, 255, 255, 0]
-      # 21: [255, 255, 255, 0]
       16: [255, 255, 0, 15]
       17: [255, 87, 0, 15]
       18: [217, 136, 128, 15]

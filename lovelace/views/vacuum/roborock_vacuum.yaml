@@ -1,0 +1,4 @@
+cards:  
+  - !include roborock_vacuum_stats.yaml
+  - !include roborock_vacuum_map.yaml
+type: 'custom:vertical-stack-in-card'

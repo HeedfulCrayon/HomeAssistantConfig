@@ -1,10 +1,11 @@
-id: kodi_movie_paused_at_night
-alias: Kodi Movie Paused At Night
+id: kodi_movie_stopped_at_night
+alias: Kodi Movie Stopped At Night
 description: ''
 trigger:
 - platform: state
   entity_id: media_player.kodi
-  to: paused
+  from: playing
+  to: idle
 condition:
   condition: or
   conditions:

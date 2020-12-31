@@ -1,0 +1,14 @@
+alias: Turn Off Lights at Bedtime
+trigger:
+  - platform: template
+    value_template: >
+      {{ is_state('input_boolean.joslyn_in_bed','on') and is_state('input_boolean.nate_in_bed','on') }}
+action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id:
+        - group.living_room_lights
+        - group.entry_lights
+        - group.tv_lights
+        - switch.tree_lights
+        - switch.tree_star

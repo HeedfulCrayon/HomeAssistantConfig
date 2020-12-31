@@ -1,0 +1,42 @@
+description: google announcement
+fields:
+  entity:
+    description: 'Entity ID of the google device'
+    example: 'media_player.google_mini'
+  message:
+    description: 'Message to announce'
+    example: 'This is a message'
+  volume:
+    description: 'Volume level for announcement'
+    example: 0.5
+sequence:
+- service: scene.create
+  data:
+    scene_id: before
+    snapshot_entities:
+    - "{{ entity }}"
+- service: media_player.volume_set
+  data:
+    entity_id: "{{ entity }}"
+    volume_level: '0.0'
+- service: media_player.turn_on
+  data:
+    entity_id: "{{ entity }}"
+- service: media_player.volume_set
+  data:
+    entity_id: "{{ entity }}"
+    volume_level: '{{ volume }}'
+- delay:
+    seconds: 1
+- service: tts.google_say
+  data:
+    entity_id: "{{ entity }}"
+    message: "{{ message }}"
+- delay:
+    seconds: 5
+- service: scene.turn_on
+  data:
+    entity_id: scene.before
+- service: media_player.turn_off
+  data:
+    entity_id: "{{ entity }}"

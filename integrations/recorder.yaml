@@ -1,2 +1,2 @@
 recorder:
-  purge_keep_days: 90
+  purge_keep_days: 2

@@ -1,0 +1,7 @@
+path: vacuum
+title: Vacuum
+icon: 'mdi:robot-vacuum'
+badges: []
+cards:
+  - !include views/vacuum/roborock_vacuum.yaml
+  - !include views/vacuum/deebot_vacuum.yaml

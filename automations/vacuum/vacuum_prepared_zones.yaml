@@ -1,0 +1,63 @@
+id: vacuum_prepared_zones
+alias: Vacuum prepared zones
+trigger:
+    platform: template
+    value_template: >
+      {{ is_state('input_boolean.rooms_vacuumed','on') }}
+condition: 
+    condition: and
+    conditions:
+      - condition: template
+        value_template: >
+          {{ is_state('input_boolean.living_room_ready_to_vacuum','on') or
+              is_state('input_boolean.dining_ready_to_vacuum','on') or
+              is_state('input_boolean.kitchen_ready_to_vacuum','on')
+          }}
+      - condition: template
+        value_template: >
+          {{ is_state('input_boolean.nate_in_bed','on') }}
+      - condition: template
+        value_template: >
+          {{ is_state('input_boolean.joslyn_in_bed','on') }}
+action:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      repeats: 1
+      zone: >-
+        {% set do_living = is_state('input_boolean.living_room_ready_to_vacuum', 'on') %}
+        {% set do_kitchen = is_state('input_boolean.kitchen_ready_to_vacuum', 'on') %}
+        {% set do_dining = is_state('input_boolean.dining_ready_to_vacuum', 'on') %}
+        {% set living = [25100, 27300, 31305, 22250] if do_living else '' %}
+        {% set kitchen = [25200, 22100, 28650, 18400] if do_kitchen else '' %}
+        {% set dining = [28700, 22100, 30950, 18550] if do_dining else '' %}
+        {% set x = ',' if do_living and do_kitchen else '' %}
+        {% set y = ',' if do_living or do_kitchen and do_dining else '' %}
+        [{{living}}{{x}}{{kitchen}}{{y}}{{dining}}]
+  # Let Vacuum get going and report state
+  - delay:
+      minutes: 5
+  # Wait for vacuum to finish before marking zones as vacuumed
+  - repeat:
+      while:
+      - condition: template
+        value_template: >
+          {{ state_attr('vacuum.xiaomi_vacuum_cleaner','battery_level') != 100 }}
+      sequence:
+      - delay:
+          minutes: 5
+  - service: camera.snapshot
+    data:
+      filename: /config/www/snapshots/vacuum_zones.jpg
+    entity_id: camera.xiaomi_cloud_map_extractor
+  - service: notify.mobile_app_nate_phone
+    data:
+      message: >
+        Zones took {{ ((as_timestamp(now()) - as_timestamp(states.automation.vacuum_prepared_zones.attributes.last_triggered)) / 60) | round(2) }} minutes to clean
+      title: "Vacuum Prepared Zones Finished"
+      data:
+        image: >-
+          {{ states.input_text.base_url.state }}/local/snapshots/vacuum_zones.jpg?{{ states.automation.vacuum_prepared_zones.last_triggered }}
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.rooms_vacuumed

@@ -1,0 +1,22 @@
+id: vacuum_clear_rooms_to_clean
+alias: Vacuum Clear Rooms to Clean
+trigger:
+    # Once room and zone automation ran
+    platform: template
+    value_template: >
+      {{ is_state('input_boolean.rooms_vacuumed','on') and is_state('input_boolean.zones_vacuumed','on') }}
+condition: >
+      {{ is_state('input_boolean.living_room_ready_to_vacuum','on') or
+          is_state('input_boolean.dining_ready_to_vacuum','on') or
+          is_state('input_boolean.kitchen_ready_to_vacuum','on')
+      }}
+action:
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.living_room_ready_to_vacuum
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.kitchen_ready_to_vacuum
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.dining_ready_to_vacuum

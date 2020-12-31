@@ -1,0 +1,3 @@
+living_room_ready_to_vacuum:
+    initial: false
+    icon: mdi:robot-vacuum

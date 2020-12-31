@@ -1,27 +1,26 @@
-'cleanup_bedroom':
-    alias: cleanup_bedroom
-    sequence:
-        - entity_id: timer.clean_bedroom
-          service: timer.start
-        - service: light.turn_on
-          entity_id: light.kids_light
-          service_data:
-            effect: 'Cleanup Fast'
-        - delay:
-          seconds: 360
-        - service: light.turn_on
-          entity_id: light.kids_light
-          service_data:
-            effect: 'Cleanup Medium'
-        - delay:
-          seconds: 180
-        - service: light.turn_on
-          entity_id: light.kids_light
-          service_data:
-            effect: 'Cleanup Slow'
-        - delay:
-          seconds: 180
-        - service: light.turn_on
-          entity_id: light.kids_light
-          service_data:
-            effect: 'Cleanup Done'
+# alias: cleanup_bedroom
+# sequence:
+#     - entity_id: timer.clean_bedroom
+#       service: timer.start
+#     - service: light.turn_on
+#       entity_id: light.kids_light
+#       service_data:
+#         effect: 'Cleanup Fast'
+#     - delay:
+#       seconds: 360
+#     - service: light.turn_on
+#       entity_id: light.kids_light
+#       service_data:
+#         effect: 'Cleanup Medium'
+#     - delay:
+#       seconds: 180
+#     - service: light.turn_on
+#       entity_id: light.kids_light
+#       service_data:
+#         effect: 'Cleanup Slow'
+#     - delay:
+#       seconds: 180
+#     - service: light.turn_on
+#       entity_id: light.kids_light
+#       service_data:
+#         effect: 'Cleanup Done'

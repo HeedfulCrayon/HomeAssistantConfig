@@ -6,9 +6,15 @@ trigger:
   entity_id: media_player.kodi
   to: playing
 condition:
-- condition: sun
-  before: sunrise
-  after: sunset
+  condition: or
+  conditions:
+    - condition: sun
+      after: sunset
+    - condition: sun
+      before: sunrise
 action:
-- scene: scene.movie
+- service: scene.turn_on
+  data:
+    entity_id: scene.movie
+    transition: 3
 mode: single
